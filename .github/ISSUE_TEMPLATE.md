@@ -1,8 +1,5 @@
-<!--- Remove this description and sections that do not apply -->
-
-This issue tracker is only for technical issues related to AmsterdamCoin Core.
-General AmsterdamCoin questions and/or support requests and are best directed to the [AmsterdamCoin Slack](http://amsterdamcoin.slack.com).
-
+This issue tracker is only for technical issues related to PUFFS Core Project.
+General questions and/or support requests regarding PUFFS or the Leafy Cauldron Apothecary and are best directed to the the Leafy Cauldron website [http://www.leafycauldron.ca], or via email to spacemanspliff@chemist.com
 ### Describe the issue
 
 ### Can you reliably reproduce the issue?
@@ -20,7 +17,7 @@ Tell us what happens instead
 ### Screenshots.
 If the issue is related to the GUI, screenshots can be added to this issue via drag & drop.
 
-### What version of AmsterdamCoin Core are you using?
+### What version of PUSS Project Core are you using?
 List the version number/commit ID, and if it is an official binary, self compiled or a distribution package.
 
 ### Machine specs:
