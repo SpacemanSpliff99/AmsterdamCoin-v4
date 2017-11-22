@@ -12,8 +12,8 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via SwiftTX
 
 This mechanism has been integrated into Bitcore-Node-AMS which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/AMS-Project/insight-api-amsterdamcoin#web-socket-api](https://github.com/AMS-Project/insight-api-amsterdamcoin#web-socket-api) 
-* API: [https://github.com/AMS-Project/insight-api-amsterdamcoin#swifttx-transactions](https://github.com/AMS-Project/insight-api-amsterdamcoin#swifttx-transactions) 
+* WebSocket: [https://github.com/AMS-Project/insight-api-puffscoin#web-socket-api](https://github.com/AMS-Project/insight-api-puffscoin#web-socket-api) 
+* API: [https://github.com/AMS-Project/insight-api-puffscoin#swifttx-transactions](https://github.com/AMS-Project/insight-api-puffscoin#swifttx-transactions) 
 
 ####Command line option
 
