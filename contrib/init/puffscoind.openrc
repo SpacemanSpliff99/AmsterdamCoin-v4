@@ -2,24 +2,24 @@
 
 # backward compatibility for existing gentoo layout
 #
-if [ -d "/var/lib/amsterdamcoin/.amsterdamcoin" ]; then
-	BITCOIND_DEFAULT_DATADIR="/var/lib/amsterdamcoin/.amsterdamcoin"
+if [ -d "/var/lib/puffscoin/.puffscoin" ]; then
+	BITCOIND_DEFAULT_DATADIR="/var/lib/puffscoin/.puffscoin"
 else
-	BITCOIND_DEFAULT_DATADIR="/var/lib/amsterdamcoind"
+	BITCOIND_DEFAULT_DATADIR="/var/lib/puffscoind"
 fi
 
-BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/amsterdamcoin/amsterdamcoin.conf}
-BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/amsterdamcoind}
-BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/amsterdamcoind.pid}
+BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/puffscoin/puffscoin.conf}
+BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/puffscoind}
+BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/puffscoind.pid}
 BITCOIND_DATADIR=${BITCOIND_DATADIR:-${BITCOIND_DEFAULT_DATADIR}}
-BITCOIND_USER=${BITCOIND_USER:-amsterdamcoin}
-BITCOIND_GROUP=${BITCOIND_GROUP:-amsterdamcoin}
-BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/amsterdamcoind}
+BITCOIND_USER=${BITCOIND_USER:-puffscoin}
+BITCOIND_GROUP=${BITCOIND_GROUP:-puffscoin}
+BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/puffscoind}
 
-name="AmsterdamCoin Core Daemon"
-description="AmsterdamCoin crypto-currency p2p network daemon"
+name="PuffsCoin Core Daemon"
+description="PuffsCoin crypto-currency p2p network daemon"
 
-command="/usr/bin/amsterdamcoind"
+command="/usr/bin/puffscoind"
 command_args="-pid=\"${BITCOIND_PIDFILE}\" \
 		-conf=\"${BITCOIND_CONFIGFILE}\" \
 		-datadir=\"${BITCOIND_DATADIR}\" \
@@ -65,7 +65,7 @@ checkconfig()
 {
 	if ! grep -qs '^rpcpassword=' "${BITCOIND_CONFIGFILE}" ; then
 		eerror ""
-		eerror "ERROR: You must set a secure rpcpassword to run amsterdamcoind."
+		eerror "ERROR: You must set a secure rpcpassword to run puffscoind."
 		eerror "The setting must appear in ${BITCOIND_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
@@ -78,7 +78,7 @@ checkconfig()
 		eerror "It is also recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"AmsterdamCoin Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"PuffsCoin Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1
