@@ -1,5 +1,5 @@
 ---
-name: "amsterdamcoin-dmg-signer"
+name: "puffscoin-dmg-signer"
 suites:
 - "trusty"
 architectures:
@@ -7,10 +7,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/amsterdamcoin-project/amsterdamcoin-detached-sigs.git"
+- "url": "https://github.com/puffscoin-project/puffscoin-detached-sigs.git"
   "dir": "signature"
 files:
-- "amsterdamcoin-osx-unsigned.tar.gz"
+- "puffscoin-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -27,11 +27,11 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=amsterdamcoin-osx-unsigned.tar.gz
-  SIGNED=amsterdamcoin-osx-signed.dmg
+  UNSIGNED=puffscoin-osx-unsigned.tar.gz
+  SIGNED=puffscoin-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"
   ./detached-sig-apply.sh ${UNSIGNED} signature/osx
-  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "AmsterdamCoin-Qt" -no-pad -r -dir-mode 0755 -apple -o uncompressed.dmg signed-app
+  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "PuffsCoin-Qt" -no-pad -r -dir-mode 0755 -apple -o uncompressed.dmg signed-app
   ${WRAP_DIR}/dmg dmg uncompressed.dmg ${OUTDIR}/${SIGNED}
