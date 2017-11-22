@@ -1,0 +1,26 @@
+[Unit]
+Description=PuffsCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=puffscoin
+Group=puffscoin
+
+Type=forking
+PIDFile=/var/lib/puffscoind/puffscoind.pid
+
+ExecStart=/usr/bin/puffscoind -daemon -pid=/var/lib/puffscoind/puffscoind.pid \
+          -conf=/etc/puffscoin/puffscoin.conf -datadir=/var/lib/puffscoind
+
+ExecStop=-/usr/bin/puffscoin-cli -conf=/etc/puffscoin/puffscoin.conf \
+         -datadir=/var/lib/puffscoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
