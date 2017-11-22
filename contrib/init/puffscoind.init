@@ -1,31 +1,31 @@
 #!/bin/bash
 #
-#  amsterdamcoind The AmsterdamCoin core server.
+#  puffscoind The PuffsCoin core server.
 #
 #
 # chkconfig: 345 80 20
-# description: amsterdamcoind
-# processname: amsterdamcoind
+# description: puffscoind
+# processname: puffscoind
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/amsterdamcoind, see below
-if [ -f /etc/sysconfig/amsterdamcoind ]; then
-        . /etc/sysconfig/amsterdamcoind
+# you can override defaults in /etc/sysconfig/puffscoind, see below
+if [ -f /etc/sysconfig/puffscoind ]; then
+        . /etc/sysconfig/puffscoind
 fi
 
 RETVAL=0
 
-prog=amsterdamcoind
-# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/amsterdamcoind
-lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/amsterdamcoind}
+prog=puffscoind
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/puffscoind
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/puffscoind}
 
-# amsterdamcoind defaults to /usr/bin/amsterdamcoind, override with BITCOIND_BIN
-bitcoind=${BITCOIND_BIN-/usr/bin/amsterdamcoind}
+# puffscoind defaults to /usr/bin/puffscoind, override with BITCOIND_BIN
+bitcoind=${BITCOIND_BIN-/usr/bin/puffscoind}
 
-# amsterdamcoind opts default to -disablewallet, override with BITCOIND_OPTS
+# puffscoind opts default to -disablewallet, override with BITCOIND_OPTS
 bitcoind_opts=${BITCOIND_OPTS}
 
 start() {
