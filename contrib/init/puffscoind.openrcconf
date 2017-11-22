@@ -1,0 +1,26 @@
+# /etc/conf.d/puffscoind: config file for /etc/init.d/puffscoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/puffscoin/puffscoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/puffscoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/puffscoind.pid"
+
+# Where to write puffscoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/puffscoind"
+
+# User and group to own puffscoind process
+#BITCOIND_USER="puffscoin"
+#BITCOIND_GROUP="puffscoin"
+
+# Path to puffscoind executable
+#BITCOIND_BIN="/usr/bin/puffscoind"
+
+# Nice value to run puffscoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
