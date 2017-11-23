@@ -8,7 +8,7 @@
 #include "spork.h"
 
 //
-// Bootup the Masternode, look for a 100000 AmsterdamCoin input and register on the network
+// Bootup the Masternode, look for a 5000 PUFFScoin input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {
@@ -42,7 +42,7 @@ void CActiveMasternode::ManageStatus()
         notCapableReason = "";
 
         if (pwalletMain->IsLocked()) {
-            notCapableReason = "Wallet is locked.";
+            notCapableReason = "PUFFS Wallet is locked.";
             LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
             return;
         }
@@ -55,7 +55,7 @@ void CActiveMasternode::ManageStatus()
 
         if (strMasterNodeAddr.empty()) {
             if (!GetLocal(service)) {
-                notCapableReason = "Can't detect external address. Please use the masternodeaddr configuration option.";
+                notCapableReason = "Cannot detect external address. Please use the masternodeaddr configuration option.";
                 LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
                 return;
             }
@@ -137,15 +137,15 @@ std::string CActiveMasternode::GetStatus()
 {
     switch (status) {
     case ACTIVE_MASTERNODE_INITIAL:
-        return "Node just started, not yet activated";
+        return "PUFFSNode just started, not yet activated";
     case ACTIVE_MASTERNODE_SYNC_IN_PROCESS:
-        return "Sync in progress. Must wait until sync is complete to start Masternode";
+        return "PUFFScoin blockchain Sync in progress. Please wait until sync is completed to start Masternode";
     case ACTIVE_MASTERNODE_INPUT_TOO_NEW:
         return strprintf("Masternode input must have at least %d confirmations", MASTERNODE_MIN_CONFIRMATIONS);
     case ACTIVE_MASTERNODE_NOT_CAPABLE:
         return "Not capable masternode: " + notCapableReason;
     case ACTIVE_MASTERNODE_STARTED:
-        return "Masternode successfully started";
+        return "PUFFS Masternode successfully started!!";
     default:
         return "unknown";
     }
