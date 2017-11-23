@@ -46,10 +46,10 @@ static bool AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || mapArgs.count("-?") || mapArgs.count("-help")) {
         // First part of help message is specific to this utility
-        std::string strUsage = _("AmsterdamCoin Core amsterdamcoin-tx utility version") + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = _("PUFFSCoin Core puffscoin-tx utility version") + " " + FormatFullVersion() + "\n\n" +
                                _("Usage:") + "\n" +
-                               "  amsterdamcoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded amsterdamcoin transaction") + "\n" +
-                               "  amsterdamcoin-tx [options] -create [commands]   " + _("Create hex-encoded amsterdamcoin transaction") + "\n" +
+                               "  puffscoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded puffscoin transaction") + "\n" +
+                               "  puffscoin-tx [options] -create [commands]   " + _("Create hex-encoded puffscoin transaction") + "\n" +
                                "\n";
 
         fprintf(stdout, "%s", strUsage.c_str());
@@ -550,7 +550,7 @@ static int CommandLineRawTx(int argc, char* argv[])
             if (argc < 2)
                 throw runtime_error("too few parameters");
 
-            // param: hex-encoded amsterdamcoin transaction
+            // param: hex-encoded puffscoin transaction
             string strHexTx(argv[1]);
             if (strHexTx == "-") // "-" implies standard input
                 strHexTx = readStdin();
