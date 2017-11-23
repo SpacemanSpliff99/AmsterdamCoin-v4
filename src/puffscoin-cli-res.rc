@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "AmsterdamCoin"
-            VALUE "FileDescription",    "AmsterdamCoin-cli (OSS RPC client for AmsterdamCoin)"
+            VALUE "CompanyName",        "PUFFScoin"
+            VALUE "FileDescription",    "PUFFScoin-cli (OSS RPC client for PUFFScoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "amsterdamcoin-cli"
+            VALUE "InternalName",       "PUFFScoin-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "amsterdamcoin-cli.exe"
-            VALUE "ProductName",        "AmsterdamCoin-cli"
+            VALUE "OriginalFilename",   "PUFFScoin-cli.exe"
+            VALUE "ProductName",        "PUFFScoin-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END
