@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between amsterdamcoin-cli and amsterdamcoind)
- * of a given instance of the AmsterdamCoin system.
+ * CBaseChainParams defines the base parameters (shared between puffscoin-cli and puffscoind)
+ * of a given instance of the PuffsCoin system.
  */
 class CBaseChainParams
 {
