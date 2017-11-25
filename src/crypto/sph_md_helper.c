@@ -1,3 +1,4 @@
+// Copyright (c) 2017 The PuffsCoin developers
 /* $Id: md_helper.c 216 2010-06-08 09:46:57Z tp $ */
 /*
  * This file contains some functions which implement the external data
