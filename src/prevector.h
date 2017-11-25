@@ -1,3 +1,4 @@
+// Copyright (c) 2017 The PuffsCoin developers
 #ifndef _BITCOIN_PREVECTOR_H_
 #define _BITCOIN_PREVECTOR_H_
 
