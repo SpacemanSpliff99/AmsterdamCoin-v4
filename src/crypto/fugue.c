@@ -1,3 +1,4 @@
+// Copyright (c) 2017 The PuffsCoin developers
 #include <stddef.h>
 #include <string.h>
 
