@@ -1,3 +1,4 @@
+// Copyright (c) 2017 The PuffsCoin developers
 /* $Id: sph_haval.h 218 2010-06-08 17:06:34Z tp $ */
 /**
  * HAVAL interface.
