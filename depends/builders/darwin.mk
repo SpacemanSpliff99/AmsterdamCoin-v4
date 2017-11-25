@@ -1,3 +1,4 @@
+// Copyright (c) 2017 The PuffsCoin developers
 build_darwin_CC: = $(shell xcrun -f clang)
 build_darwin_CXX: = $(shell xcrun -f clang++)
 build_darwin_AR: = $(shell xcrun -f ar)
