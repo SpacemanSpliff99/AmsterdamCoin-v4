@@ -1,3 +1,4 @@
+// Copyright (c) 2017 The PuffsCoin developers
 /* $Id: haval_helper.c 218 2010-06-08 17:06:34Z tp $ */
 /*
  * Helper code, included (three times !) by HAVAL implementation.
