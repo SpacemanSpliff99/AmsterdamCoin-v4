@@ -1,3 +1,4 @@
+// Copyright (c) 2017 The PuffsCoin developers
 #ifndef BITCOIN_CHAINPARAMSSEEDS_H
 #define BITCOIN_CHAINPARAMSSEEDS_H
 /**
