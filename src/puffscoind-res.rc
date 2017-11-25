@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "PUFFSCoin"
-            VALUE "FileDescription",    "puffscoind (OSS daemon/client for PUFFSCoin)"
+            VALUE "CompanyName",        "PuffsCoin"
+            VALUE "FileDescription",    "puffscoind (OSS daemon/client for PuffsCoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "puffscoind"
             VALUE "LegalCopyright",     COPYRIGHT_STR
