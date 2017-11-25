@@ -1,4 +1,3 @@
-// Copyright (c) 2017 The PuffsCoin developers
 default_build_CC = gcc
 default_build_CXX = g++
 default_build_AR = ar
