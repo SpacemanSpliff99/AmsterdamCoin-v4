@@ -1,3 +1,4 @@
+// Copyright (c) 2017 The PuffsCoin developers
 // clang-format off
 #include "net.h"
 #include "masternodeconfig.h"
