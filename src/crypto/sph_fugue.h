@@ -1,3 +1,4 @@
+// Copyright (c) 2017 The PuffsCoin developers
 #ifndef SPH_FUGUE_H__
 #define SPH_FUGUE_H__
 
