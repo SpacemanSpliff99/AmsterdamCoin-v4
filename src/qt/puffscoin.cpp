@@ -1,11 +1,12 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The AmsterdamCoin developers
+// Copyright (c) 2017 The PUFFScoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/amsterdamcoin-config.h"
+#include "config/puffscoin-config.h"
 #endif
 
 #include "bitcoingui.h"
@@ -93,7 +94,7 @@ static void InitMessage(const std::string& message)
  */
 static std::string Translate(const char* psz)
 {
-    return QCoreApplication::translate("amsterdamcoin-core", psz).toStdString();
+    return QCoreApplication::translate("puffscoin-core", psz).toStdString();
 }
 
 static QString GetLangTerritory()
@@ -140,11 +141,11 @@ static void initTranslations(QTranslator& qtTranslatorBase, QTranslator& qtTrans
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTranslator);
 
-    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in amsterdamcoin.qrc)
+    // Load e.g. puffscoin_de.qm (shortcut "de" needs to be defined in puufscoin.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         QApplication::installTranslator(&translatorBase);
 
-    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in amsterdamcoin.qrc)
+    // Load e.g. puffscoin_de_DE.qm (shortcut "de_DE" needs to be defined in puffscoin.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         QApplication::installTranslator(&translator);
 }
@@ -165,7 +166,7 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 }
 #endif
 
-/** Class encapsulating AmsterdamCoin Core startup and shutdown.
+/** Class encapsulating PUFFScoin Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
 class BitcoinCore : public QObject
@@ -194,7 +195,7 @@ private:
     void handleRunawayException(std::exception* e);
 };
 
-/** Main AmsterdamCoin application object */
+/** Main PUFFScoin application object */
 class BitcoinApplication : public QApplication
 {
     Q_OBJECT
@@ -252,7 +253,7 @@ private:
     void startThread();
 };
 
-#include "amsterdamcoin.moc"
+#include "puffscoin.moc"
 
 BitcoinCore::BitcoinCore() : QObject()
 {
@@ -505,7 +506,7 @@ void BitcoinApplication::shutdownResult(int retval)
 
 void BitcoinApplication::handleRunawayException(const QString& message)
 {
-    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. AmsterdamCoin can no longer continue safely and will quit.") + QString("\n\n") + message);
+    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. PUFFScoin Core can no longer continue safely and will quit.") + QString("\n\n") + message);
     ::exit(1);
 }
 
@@ -585,14 +586,14 @@ int main(int argc, char* argv[])
     /// 6. Determine availability of data directory and parse amsterdamcoin.conf
     /// - Do not call GetDataDir(true) before this step finishes
     if (!boost::filesystem::is_directory(GetDataDir(false))) {
-        QMessageBox::critical(0, QObject::tr("AmsterdamCoin Core"),
+        QMessageBox::critical(0, QObject::tr("PUFFScoin Core"),
             QObject::tr("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
         return 1;
     }
     try {
         ReadConfigFile(mapArgs, mapMultiArgs);
     } catch (std::exception& e) {
-        QMessageBox::critical(0, QObject::tr("AmsterdamCoin Core"),
+        QMessageBox::critical(0, QObject::tr("PUFFScoin Core"),
             QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
         return false;
     }
@@ -605,7 +606,7 @@ int main(int argc, char* argv[])
 
     // Check for -testnet or -regtest parameter (Params() calls are only valid after this clause)
     if (!SelectParamsFromCommandLine()) {
-        QMessageBox::critical(0, QObject::tr("AmsterdamCoin Core"), QObject::tr("Error: Invalid combination of -regtest and -testnet."));
+        QMessageBox::critical(0, QObject::tr("PUFFScoin Core"), QObject::tr("Error: Invalid combination of -regtest and -testnet."));
         return 1;
     }
 #ifdef ENABLE_WALLET
@@ -624,7 +625,7 @@ int main(int argc, char* argv[])
     /// 7a. parse masternode.conf
     string strErr;
     if (!masternodeConfig.read(strErr)) {
-        QMessageBox::critical(0, QObject::tr("AmsterdamCoin Core"),
+        QMessageBox::critical(0, QObject::tr("PUFFScoin Core"),
             QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
         return false;
     }
@@ -670,7 +671,7 @@ int main(int argc, char* argv[])
         app.createWindow(networkStyle.data());
         app.requestInitialize();
 #if defined(Q_OS_WIN) && QT_VERSION >= 0x050000
-        WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("AmsterdamCoin Core didn't yet exit safely..."), (HWND)app.getMainWinId());
+        WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("PUFFScoin Core didn't yet exit safely..."), (HWND)app.getMainWinId());
 #endif
         app.exec();
         app.requestShutdown();
