@@ -26,7 +26,7 @@ import collections
 PATTERN_IPV4 = re.compile(r"^((\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})):(\d+)$")
 PATTERN_IPV6 = re.compile(r"^\[([0-9a-z:]+)\]:(\d+)$")
 PATTERN_ONION = re.compile(r"^([abcdefghijklmnopqrstuvwxyz234567]{16}\.onion):(\d+)$")
-PATTERN_AGENT = re.compile(r"^(/AmsterdamCoinCore:2.2.(0|1|99)/)$")
+PATTERN_AGENT = re.compile(r"^(/PUFFScoinCore:2.2.(0|1|99)/)$")
 
 def parseline(line):
     sline = line.split()
@@ -154,7 +154,7 @@ def main():
     ips = [ip for ip in ips if PATTERN_AGENT.match(re.sub(' ', '-', ip['agent']))]
     # Sort by availability (and use last success as tie breaker)
     ips.sort(key=lambda x: (x['uptime'], x['lastsuccess'], x['ip']), reverse=True)
-    # Filter out hosts with multiple bitcoin ports, these are likely abusive
+    # Filter out hosts with multiple puffscoin ports, these are likely abusive
     ips = filtermultiport(ips)
     # Look up ASNs and limit results, both per ASN and globally.
     ips = filterbyasn(ips, MAX_SEEDS_PER_ASN, NSEEDS)
