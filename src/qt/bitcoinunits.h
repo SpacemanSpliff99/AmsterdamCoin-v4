@@ -53,13 +53,13 @@ class BitcoinUnits : public QAbstractListModel
 public:
     explicit BitcoinUnits(QObject* parent);
 
-    /** AmsterdamCoin units.
+    /** PUFFScoin units.
       @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
      */
     enum Unit {
-        AMS,
-        mAMS,
-        uAMS
+        PUFFS,
+        mPUFFS,
+        uPUFFS
     };
 
     enum SeparatorStyle {
