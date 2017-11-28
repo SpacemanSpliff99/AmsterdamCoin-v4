@@ -11,9 +11,9 @@ rpcpass = ""
 
 
 if rpcpass == "":
-    access = ServiceProxy("http://127.0.0.1:51020")
+    access = ServiceProxy("http://127.0.0.1:50420")
 else:
-    access = ServiceProxy("http://"+rpcuser+":"+rpcpass+"@127.0.0.1:51020")
+    access = ServiceProxy("http://"+rpcuser+":"+rpcpass+"@127.0.0.1:50420")
 cmd = sys.argv[1].lower()
 
 if cmd == "backupwallet":
@@ -37,21 +37,21 @@ elif cmd == "encryptwallet":
 
 elif cmd == "getaccount":
     try:
-        addr = raw_input("Enter a Bitcoin address: ")
+        addr = raw_input("Enter a PUFFScoin address: ")
         print access.getaccount(addr)
     except:
         print "\n---An error occurred---\n"
 
 elif cmd == "getaccountaddress":
     try:
-        acct = raw_input("Enter an account name: ")
+        acct = raw_input("Enter a PUFFScoin account name: ")
         print access.getaccountaddress(acct)
     except:
         print "\n---An error occurred---\n"
 
 elif cmd == "getaddressesbyaccount":
     try:
-        acct = raw_input("Enter an account name: ")
+        acct = raw_input("Enter a PUFFScoin account name: ")
         print access.getaddressesbyaccount(acct)
     except:
         print "\n---An error occurred---\n"
@@ -139,7 +139,7 @@ elif cmd == "getreceivedbyaccount":
 
 elif cmd == "getreceivedbyaddress":
     try:
-        addr = raw_input("Enter a Bitcoin address (optional): ")
+        addr = raw_input("Enter a PUFFScoin address (optional): ")
         mc = raw_input("Minimum confirmations (optional): ")
         try:
             print access.getreceivedbyaddress(addr, mc)
