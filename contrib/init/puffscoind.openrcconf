@@ -9,7 +9,7 @@
 # What filename to give the pidfile
 #BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/puffscoind.pid"
 
-# Where to write puffscoind data (be mindful that the blockchain is large)
+# Where to write puffscoind data (be mindful that the blockchain will become larger as the system ages.)
 #BITCOIND_DATADIR="/var/lib/puffscoind"
 
 # User and group to own puffscoind process
