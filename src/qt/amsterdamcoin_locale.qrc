@@ -1,17 +1,17 @@
 <!DOCTYPE RCC><RCC version="1.0">
     <qresource prefix="/translations">
-        <file alias="ca">locale/amsterdamcoin_ca.qm</file>
-        <file alias="da">locale/amsterdamcoin_da.qm</file>
-        <file alias="de">locale/amsterdamcoin_de.qm</file>
-        <file alias="en">locale/amsterdamcoin_en.qm</file>
-        <file alias="en_US">locale/amsterdamcoin_en_US.qm</file>
-        <file alias="es">locale/amsterdamcoin_es.qm</file>
-        <file alias="fr_FR">locale/amsterdamcoin_fr_FR.qm</file>
-        <file alias="it">locale/amsterdamcoin_it.qm</file>
-        <file alias="ja">locale/amsterdamcoin_ja.qm</file>
-        <file alias="pt">locale/amsterdamcoin_pt.qm</file>
-        <file alias="ro_RO">locale/amsterdamcoin_ro_RO.qm</file>
-        <file alias="ru">locale/amsterdamcoin_ru.qm</file>
-        <file alias="zh_TW">locale/amsterdamcoin_zh_TW.qm</file>
+        <file alias="ca">locale/puffscoin_ca.qm</file>
+        <file alias="da">locale/puffscoin_da.qm</file>
+        <file alias="de">locale/puffscoin_de.qm</file>
+        <file alias="en">localepuffscoin_en.qm</file>
+        <file alias="en_US">locale/puffscoin_en_US.qm</file>
+        <file alias="es">locale/puffscoin_es.qm</file>
+        <file alias="fr_FR">locale/puffscoin_fr_FR.qm</file>
+        <file alias="it">locale/puffscoin_it.qm</file>
+        <file alias="ja">locale/puffscoin_ja.qm</file>
+        <file alias="pt">locale/puffscoin_pt.qm</file>
+        <file alias="ro_RO">locale/puffscoin_ro_RO.qm</file>
+        <file alias="ru">locale/puffscoin_ru.qm</file>
+        <file alias="zh_TW">locale/puffscoin_zh_TW.qm</file>
     </qresource>
 </RCC>
