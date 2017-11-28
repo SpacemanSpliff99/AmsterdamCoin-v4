@@ -1,6 +1,6 @@
 [Protocol]
-exec=amsterdamcoin-qt '%u'
-protocol=amsterdamcoin
+exec=puffscoin-qt '%u'
+protocol=puffscoin
 input=none
 output=none
 helper=true
