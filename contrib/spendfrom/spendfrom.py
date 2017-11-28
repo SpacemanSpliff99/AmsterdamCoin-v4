@@ -7,7 +7,7 @@
 #  spendfrom.py  # Lists available funds
 #  spendfrom.py --from=ADDRESS --to=ADDRESS --amount=11.00
 #
-# Assumes it will talk to a amsterdamcoind or amsterdamcoin-Qt running
+# Assumes it will talk to a puffscoind or puffscoin-Qt running
 # on localhost.
 #
 # Depends on jsonrpc
@@ -26,22 +26,22 @@ from jsonrpc import ServiceProxy, json
 BASE_FEE=Decimal("0.001")
 
 def check_json_precision():
-    """Make sure json library being used does not lose precision converting BTC values"""
+    """Make sure json library being used does not lose precision converting PUFFS values"""
     n = Decimal("20000000.00000003")
     satoshis = int(json.loads(json.dumps(float(n)))*1.0e8)
     if satoshis != 2000000000000003:
         raise RuntimeError("JSON encode/decode loses precision")
 
 def determine_db_dir():
-    """Return the default location of the amsterdamcoin data directory"""
+    """Return the default location of the puffscoin data directory"""
     if platform.system() == "Darwin":
-        return os.path.expanduser("~/Library/Application Support/AmsterdamCoin/")
+        return os.path.expanduser("~/Library/Application Support/PUFFScoin/")
     elif platform.system() == "Windows":
-        return os.path.join(os.environ['APPDATA'], "AmsterdamCoin")
-    return os.path.expanduser("~/.amsterdamcoin")
+        return os.path.join(os.environ['APPDATA'], "PUFFScoin")
+    return os.path.expanduser("~/.puffscoin")
 
 def read_bitcoin_config(dbdir):
-    """Read the amsterdamcoin.conf file from dbdir, returns dictionary of settings"""
+    """Read the puffscoin.conf file from dbdir, returns dictionary of settings"""
     from ConfigParser import SafeConfigParser
 
     class FakeSecHead(object):
@@ -59,20 +59,20 @@ def read_bitcoin_config(dbdir):
                 return s
 
     config_parser = SafeConfigParser()
-    config_parser.readfp(FakeSecHead(open(os.path.join(dbdir, "amsterdamcoin.conf"))))
+    config_parser.readfp(FakeSecHead(open(os.path.join(dbdir, "puffscoin.conf"))))
     return dict(config_parser.items("all"))
 
 def connect_JSON(config):
-    """Connect to a amsterdamcoin JSON-RPC server"""
+    """Connect to a PUFFScoin JSON-RPC server"""
     testnet = config.get('testnet', '0')
     testnet = (int(testnet) > 0)  # 0/1 in config file, convert to True/False
     if not 'rpcport' in config:
-        config['rpcport'] = 51475 if testnet else 51020
+        config['rpcport'] = 50422 if testnet else 50420
     connect = "http://%s:%s@127.0.0.1:%s"%(config['rpcuser'], config['rpcpassword'], config['rpcport'])
     try:
         result = ServiceProxy(connect)
         # ServiceProxy is lazy-connect, so send an RPC command mostly to catch connection errors,
-        # but also make sure the amsterdamcoind we're talking to is/isn't testnet:
+        # but also make sure the puffscoind we're talking to is/isn't testnet:
         if result.getmininginfo()['testnet'] != testnet:
             sys.stderr.write("RPC server at "+connect+" testnet setting mismatch\n")
             sys.exit(1)
@@ -81,36 +81,36 @@ def connect_JSON(config):
         sys.stderr.write("Error connecting to RPC server at "+connect+"\n")
         sys.exit(1)
 
-def unlock_wallet(amsterdamcoind):
-    info = amsterdamcoind.getinfo()
+def unlock_wallet(puffscoind):
+    info = puffscoind.getinfo()
     if 'unlocked_until' not in info:
         return True # wallet is not encrypted
     t = int(info['unlocked_until'])
     if t <= time.time():
         try:
             passphrase = getpass.getpass("Wallet is locked; enter passphrase: ")
-            amsterdamcoind.walletpassphrase(passphrase, 5)
+            puffscoind.walletpassphrase(passphrase, 5)
         except:
-            sys.stderr.write("Wrong passphrase\n")
+            sys.stderr.write("Load another bowl, dude, you entered the wrong passphrase\n")
 
-    info = amsterdamcoind.getinfo()
+    info = puffscoind.getinfo()
     return int(info['unlocked_until']) > time.time()
 
-def list_available(amsterdamcoind):
+def list_available(puffscoind):
     address_summary = dict()
 
     address_to_account = dict()
-    for info in amsterdamcoind.listreceivedbyaddress(0):
+    for info in puffscoind.listreceivedbyaddress(0):
         address_to_account[info["address"]] = info["account"]
 
-    unspent = amsterdamcoind.listunspent(0)
+    unspent = puffscoind.listunspent(0)
     for output in unspent:
         # listunspent doesn't give addresses, so:
-        rawtx = amsterdamcoind.getrawtransaction(output['txid'], 1)
+        rawtx = puffscoind.getrawtransaction(output['txid'], 1)
         vout = rawtx["vout"][output['vout']]
         pk = vout["scriptPubKey"]
 
-        # This code only deals with ordinary pay-to-amsterdamcoin-address
+        # This code only deals with ordinary pay-to-puffscoin-address
         # or pay-to-script-hash outputs right now; anything exotic is ignored.
         if pk["type"] != "pubkeyhash" and pk["type"] != "scripthash":
             continue
@@ -139,8 +139,8 @@ def select_coins(needed, inputs):
         n += 1
     return (outputs, have-needed)
 
-def create_tx(amsterdamcoind, fromaddresses, toaddress, amount, fee):
-    all_coins = list_available(amsterdamcoind)
+def create_tx(puffscoind, fromaddresses, toaddress, amount, fee):
+    all_coins = list_available(puffscoind)
 
     total_available = Decimal("0.0")
     needed = amount+fee
@@ -159,7 +159,7 @@ def create_tx(amsterdamcoind, fromaddresses, toaddress, amount, fee):
     # Note:
     # Python's json/jsonrpc modules have inconsistent support for Decimal numbers.
     # Instead of wrestling with getting json.dumps() (used by jsonrpc) to encode
-    # Decimals, I'm casting amounts to float before sending them to amsterdamcoind.
+    # Decimals, I'm casting amounts to float before sending them to puffscoind.
     #
     outputs = { toaddress : float(amount) }
     (inputs, change_amount) = select_coins(needed, potential_inputs)
@@ -170,8 +170,8 @@ def create_tx(amsterdamcoind, fromaddresses, toaddress, amount, fee):
         else:
             outputs[change_address] = float(change_amount)
 
-    rawtx = amsterdamcoind.createrawtransaction(inputs, outputs)
-    signed_rawtx = amsterdamcoind.signrawtransaction(rawtx)
+    rawtx = puffscoind.createrawtransaction(inputs, outputs)
+    signed_rawtx = puffscoind.signrawtransaction(rawtx)
     if not signed_rawtx["complete"]:
         sys.stderr.write("signrawtransaction failed\n")
         sys.exit(1)
@@ -179,10 +179,10 @@ def create_tx(amsterdamcoind, fromaddresses, toaddress, amount, fee):
 
     return txdata
 
-def compute_amount_in(amsterdamcoind, txinfo):
+def compute_amount_in(puffscoind, txinfo):
     result = Decimal("0.0")
     for vin in txinfo['vin']:
-        in_info = amsterdamcoind.getrawtransaction(vin['txid'], 1)
+        in_info = puffscoind.getrawtransaction(vin['txid'], 1)
         vout = in_info['vout'][vin['vout']]
         result = result + vout['value']
     return result
@@ -193,12 +193,12 @@ def compute_amount_out(txinfo):
         result = result + vout['value']
     return result
 
-def sanity_test_fee(amsterdamcoind, txdata_hex, max_fee):
+def sanity_test_fee(puffscoind, txdata_hex, max_fee):
     class FeeError(RuntimeError):
         pass
     try:
-        txinfo = amsterdamcoind.decoderawtransaction(txdata_hex)
-        total_in = compute_amount_in(amsterdamcoind, txinfo)
+        txinfo = puffscoind.decoderawtransaction(txdata_hex)
+        total_in = compute_amount_in(puffscoind, txinfo)
         total_out = compute_amount_out(txinfo)
         if total_in-total_out > max_fee:
             raise FeeError("Rejecting transaction, unreasonable fee of "+str(total_in-total_out))
@@ -206,7 +206,7 @@ def sanity_test_fee(amsterdamcoind, txdata_hex, max_fee):
         tx_size = len(txdata_hex)/2
         kb = tx_size/1000  # integer division rounds down
         if kb > 1 and fee < BASE_FEE:
-            raise FeeError("Rejecting no-fee transaction, larger than 1000 bytes")
+            raise FeeError("Rejecting no-fee transaction, tx data size larger than 1000 bytes")
         if total_in < 0.01 and fee < BASE_FEE:
             raise FeeError("Rejecting no-fee, tiny-amount transaction")
         # Exercise for the reader: compute transaction priority, and
@@ -223,15 +223,15 @@ def main():
     parser.add_option("--from", dest="fromaddresses", default=None,
                       help="addresses to get AMSs from")
     parser.add_option("--to", dest="to", default=None,
-                      help="address to get send AMSs to")
+                      help="address to get send PUFFS to")
     parser.add_option("--amount", dest="amount", default=None,
                       help="amount to send")
     parser.add_option("--fee", dest="fee", default="0.0",
                       help="fee to include")
     parser.add_option("--datadir", dest="datadir", default=determine_db_dir(),
-                      help="location of amsterdamcoin.conf file with RPC username/password (default: %default)")
+                      help="location of puffscoin.conf file with RPC username/password (default: %default)")
     parser.add_option("--testnet", dest="testnet", default=False, action="store_true",
-                      help="Use the test network")
+                      help="Use the PUFFScoin test network")
     parser.add_option("--dry_run", dest="dry_run", default=False, action="store_true",
                       help="Don't broadcast the transaction, just create and print the transaction data")
 
@@ -243,7 +243,7 @@ def main():
     amsterdamcoind = connect_JSON(config)
 
     if options.amount is None:
-        address_summary = list_available(amsterdamcoind)
+        address_summary = list_available(puffscoind)
         for address,info in address_summary.iteritems():
             n_transactions = len(info['outputs'])
             if n_transactions > 1:
@@ -253,14 +253,14 @@ def main():
     else:
         fee = Decimal(options.fee)
         amount = Decimal(options.amount)
-        while unlock_wallet(amsterdamcoind) == False:
+        while unlock_wallet(puffscoind) == False:
             pass # Keep asking for passphrase until they get it right
-        txdata = create_tx(amsterdamcoind, options.fromaddresses.split(","), options.to, amount, fee)
-        sanity_test_fee(amsterdamcoind, txdata, amount*Decimal("0.01"))
+        txdata = create_tx(puffscoind, options.fromaddresses.split(","), options.to, amount, fee)
+        sanity_test_fee(puffscoind, txdata, amount*Decimal("0.01"))
         if options.dry_run:
             print(txdata)
         else:
-            txid = amsterdamcoind.sendrawtransaction(txdata)
+            txid = puffscoind.sendrawtransaction(txdata)
             print(txid)
 
 if __name__ == '__main__':
