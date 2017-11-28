@@ -66,9 +66,9 @@ License: LGPL
 Comment: Icon Pack: Crystal SVG
 
 Files: src/qt/res/icons/bitcoin.png, src/qt/res/icons/toolbar.png
-Copyright: Bitboy (optimized for 16x16 by Wladimir van der Laan)
-License: PUB-DOM
-Comment: Site: https://bitcointalk.org/?topic=1756.0
+Copyright: PUFFScoin Core
+License: LGPL
+Comment: Site: https://www.puffscoin.ca
 
 Files:  scripts/img/reload.xcf, src/qt/res/movies/*.png
 Copyright: Everaldo (Everaldo Coelho)
@@ -77,10 +77,9 @@ Comment: Icon Pack: Kids
          Site: http://findicons.com/icon/17102/reload?id=17102
 
 Files: src/qt/res/images/splash2.jpg
-License: PUB-DOM
-Copyright: Crobbo (forum)
-Comment: Site: https://bitcointalk.org/index.php?topic=32273.0
-
+License: COPYRIGHT
+Copyright: PUFFScoin core
+Comment: Site: https://www.puffscoin.ca
 
 License: Expat
  Permission is hereby granted, free of charge, to any person obtaining a
