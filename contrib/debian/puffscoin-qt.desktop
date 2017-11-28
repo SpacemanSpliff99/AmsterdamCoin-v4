@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=PUFFScoin
+Comment=PUFFScoin - A Cryptocurrency for Medical Cannabis
+Comment[fr]=PUFFScoin - Une cryptomonnaie pour le cannabis médical
+Comment[tr]=PUFFSoin - Tıbbi Kenevir İçin Bir Şifreleme İmkanı
+Exec=puffscoin-qt %u
+Terminal=false
+Type=Application
+Icon=puffscoin128
+MimeType=x-scheme-handler/puffscoin;
+Categories=Office;Finance;Pharmaceuticals
