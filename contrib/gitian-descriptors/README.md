@@ -14,13 +14,16 @@ You need to be running a recent version of 64-bit-Ubuntu, and you need to instal
 
 Sanity checks:
 
-	sudo service apt-cacher-ng status  # Should return apt-cacher-ng is running
-	ls -l /dev/kvm   # Should show a /dev/kvm device
+	sudo service apt-cacher-ng status  
+	# Should return apt-cacher-ng is running
+	
+	ls -l /dev/kvm   
+	# Should show a /dev/kvm device
 
 
 Once you've got the right hardware and software:
 
-    git clone git://github.com/puffscoin-project/puffscoin.git
+    git clone git:/github.com/SpacemanSpliff99/PUFFSco..git
     git clone git://github.com/devrandom/gitian-builder.git
     mkdir gitian-builder/inputs
     cd gitian-builder/inputs
@@ -62,5 +65,5 @@ Here's a description of Gavin's setup on OSX 10.6:
 5. Still inside Ubuntu, tell gitian-builder to use LXC, then follow the "Once you've got the right hardware and software" instructions above:
 
 	export USE_LXC=1
-	git clone git://github.com/puffscoin-project/puffscoin.git
+	git clone git://github.com/SpacemanSpliff99/PUFFSco..git
 	... etc
