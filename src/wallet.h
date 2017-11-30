@@ -75,7 +75,7 @@ enum AvailableCoinsType {
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
     ONLY_NOT10000IFMN = 3,
-    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 10000 AMS at the same time
+    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 10000 PUFFS at the same time
     ONLY_10000 = 5                        // find masternode outputs including locked ones (use with caution)
 };
 
@@ -299,7 +299,7 @@ public:
     std::map<CBitcoinAddress, std::vector<COutput> > AvailableCoinsByAddress(bool fConfirmed = true, CAmount maxCoinValue = 0);
     bool SelectCoinsMinConf(const CAmount& nTargetValue, int nConfMine, int nConfTheirs, std::vector<COutput> vCoins, std::set<std::pair<const CWalletTx*, unsigned int> >& setCoinsRet, CAmount& nValueRet) const;
 
-    /// Get 1000DASH output and keys which can be used for the Masternode
+    /// Get 5000 PUFFS output and keys which can be used for the Masternode
     bool GetMasternodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet, std::string strTxHash = "", std::string strOutputIndex = "");
     /// Extract txin information and keys from output
     bool GetVinAndKeysFromOutput(COutput out, CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet);
@@ -980,7 +980,7 @@ public:
             const CTxIn vin = CTxIn(hashTx, i);
 
             if (pwallet->IsSpent(hashTx, i) || pwallet->IsLockedCoin(hashTx, i)) continue;
-            if (fMasterNode && vout[i].nValue == 100000 * COIN) continue; // do not count MN-like outputs
+            if (fMasterNode && vout[i].nValue == 5000 * COIN) continue; // do not count MN-like outputs
 
             const int rounds = pwallet->GetInputObfuscationRounds(vin);
             if (rounds >= -2 && rounds < nObfuscationRounds) {
