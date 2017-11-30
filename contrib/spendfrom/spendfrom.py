@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Use the raw transactions API to spend AMSs received on particular addresses,
+# Use the raw transactions API to spend PUFFS received on particular addresses,
 # and send any change back to that same address.
 #
 # Example usage:
@@ -221,7 +221,7 @@ def main():
 
     parser = optparse.OptionParser(usage="%prog [options]")
     parser.add_option("--from", dest="fromaddresses", default=None,
-                      help="addresses to get AMSs from")
+                      help="addresses to get PUFFS from")
     parser.add_option("--to", dest="to", default=None,
                       help="address to get send PUFFS to")
     parser.add_option("--amount", dest="amount", default=None,
