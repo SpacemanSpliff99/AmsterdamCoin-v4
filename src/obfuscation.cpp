@@ -38,7 +38,7 @@ map<uint256, CObfuscationBroadcastTx> mapObfuscationBroadcastTxes;
 // Keep track of the active Masternode
 CActiveMasternode activeMasternode;
 
-/* *** BEGIN OBFUSCATION MAGIC - AMS **********
+/* *** BEGIN OBFUSCATION MAGIC - PUFFS **********
     Copyright (c) 2014-2015, Dash Developers
         eduffield - evan@dashpay.io
         udjinm6   - udjinm6@dashpay.io
@@ -1989,10 +1989,10 @@ int CObfuscationPool::GetDenominations(const std::vector<CTxOut>& vout, bool fSi
 
     // Function returns as follows:
     //
-    // bit 0 - 100AMS+1 ( bit on if present )
-    // bit 1 - 10AMS+1
-    // bit 2 - 1AMS+1
-    // bit 3 - .1AMS+1
+    // bit 0 - 100PUFFS+1 ( bit on if present )
+    // bit 1 - 10PUFFS+1
+    // bit 2 - 1PUFFS+1
+    // bit 3 - .1PUFFS+1
 
     return denom;
 }
@@ -2110,7 +2110,7 @@ bool CObfuScationSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey)
     uint256 hash;
     if (GetTransaction(vin.prevout.hash, txVin, hash, true)) {
         BOOST_FOREACH (CTxOut out, txVin.vout) {
-            if (out.nValue == 100000 * COIN) {
+            if (out.nValue == 5000 * COIN) {
                 if (out.scriptPubKey == payee2) return true;
             }
         }
