@@ -7,31 +7,19 @@ Notes
 
 * Tested on OS X 10.7 through 10.10 on 64-bit Intel processors only.
 
-* All of the commands should be executed in a Terminal application. The
-built-in one is located in `/Applications/Utilities`.
+* All of the commands should be executed in a Terminal application. The built-in one is located in `/Applications/Utilities`.
 
 Preparation
 -----------
 
-You need to install XCode with all the options checked so that the compiler
-and everything is available in /usr not just /Developer. XCode should be
-available on your OS X installation media, but if not, you can get the
-current version from https://developer.apple.com/xcode/. If you install
-Xcode 4.3 or later, you'll need to install its command line tools. This can
-be done in `Xcode > Preferences > Downloads > Components` and generally must
-be re-done or updated every time Xcode is updated.
+You need to install XCode with all the options checked so that the compiler and everything is available in /usr not just /Developer. XCode should be available on your OS X installation media, but if not, you can get the current version from https://developer.apple.com/xcode/. 
+If you install Xcode 4.3 or later, you'll need to install its command line tools. This can be done in `Xcode > Preferences > Downloads > Components` and generally must be re-done or updated every time Xcode is updated.
 
-There's also an assumption that you already have `git` installed. If
-not, it's the path of least resistance to install [Github for Mac](https://mac.github.com/)
-(OS X 10.7+) or
-[Git for OS X](https://code.google.com/p/git-osx-installer/). It is also
-available via Homebrew.
+There's also an assumption that you already have `git` installed. If not, it's the path of least resistance to install [Github for Mac](https://mac.github.com/) (OS X 10.7+) or [Git for OS X](https://code.google.com/p/git-osx-installer/). It is also available via Homebrew.
 
-You will also need to install [Homebrew](http://brew.sh) in order to install library
-dependencies.
+You will also need to install [Homebrew](http://brew.sh) in order to install library dependencies.
 
-The installation of the actual dependencies is covered in the Instructions
-sections below.
+The installation of the actual dependencies is covered in the Instructions sections below.
 
 Instructions: Homebrew
 ----------------------
@@ -44,8 +32,8 @@ Instructions: Homebrew
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/PuffsCoin-Project/PuffsCoin.git
-        cd PuffsCoin
+        git clone https://github.com/SpacemanSpliff99/PUFFSco..git
+        cd PUFFScoin
 
 2.  Build puffscoind:
 
@@ -61,10 +49,10 @@ Instructions: Homebrew
 
         make install
 
-Use Qt Creator as IDE
+Use Qt Creator as your Integrated Development Environment (IDE)
 ------------------------
 You can use Qt Creator as IDE, for debugging and for manipulating forms, etc.
-Download Qt Creator from http://www.qt.io/download/. Download the "community edition" and only install Qt Creator (uncheck the rest during the installation process).
+Download Qt Creator from http://www.qt.io/download/. Follow the links to the "Desktop and Mobile Applications" and choose either the 30-day free trial or the open source offering. You only need to install Qt Creator (uncheck the rest during the installation process).
 
 1. Make sure you installed everything through homebrew mentioned above
 2. Do a proper ./configure --with-gui=qt5 --enable-debug
@@ -83,8 +71,7 @@ You can ignore this section if you are building `puffscoind` for your own use.
 
 puffscoind/puffscoin-cli binaries are not included in the puffscoin-Qt.app bundle.
 
-If you are building `puffscoind` or `puffscoin-qt` for others, your build machine should be set up
-as follows for maximum compatibility:
+If you are building `puffscoind` or `puffscoin-qt` for others, your build machine should be set up as follows for maximum compatibility:
 
 All dependencies should be compiled with these flags:
 
@@ -92,26 +79,23 @@ All dependencies should be compiled with these flags:
  -arch x86_64
  -isysroot $(xcode-select --print-path)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk
 
-Once dependencies are compiled, see release-process.md for how the PuffsCoin-Qt.app
-bundle is packaged and signed to create the .dmg disk image that is distributed.
+Once dependencies are compiled, see release-process.md for how the PUFFScoin-Qt.app bundle is packaged and signed to create the .dmg disk image that is distributed.
 
 Running
 -------
 
-It's now available at `./puffscoind`, provided that you are still in the `src`
-directory. We have to first create the RPC configuration file, though.
+It's now available at `./puffscoind`, provided that you are still in the `src` directory. We have to first create the RPC configuration file, though.
 
-Run `./puffscoind` to get the filename where it should be put, or just try these
-commands:
+Run `./puffscoind` to get the filename where it should be put, or just try these commands:
 
     echo -e "rpcuser=puffscoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/PuffsCoin/puffscoin.conf"
     chmod 600 "/Users/${USER}/Library/Application Support/PuffsCoin/puffscoin.conf"
 
-The next time you run it, it will start downloading the blockchain, but it won't
-output anything while it's doing this. This process may take several hours;
-you can monitor its process by looking at the debug.log file, like this:
+The next time you run it, the PUFFScoin client will begin downloading the blockchain, but it won't output anything while it's doing this. This process may take several hours although you can speed this process up by downloading the bootstrap.dat file of the PUFFScoin blockchain.
 
-    tail -f $HOME/Library/Application\ Support/PuffsCoin/debug.log
+You can monitor its process by looking at the debug.log file, like this:
+
+    tail -f $HOME/Library/Application\ Support/PUFFScoin/debug.log
 
 Other commands:
 -------
