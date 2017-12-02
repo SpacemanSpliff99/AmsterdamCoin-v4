@@ -1,6 +1,6 @@
 UNIX BUILD NOTES
 ====================
-Some notes on how to build PuffsCoin in Unix.
+Some notes on how to build PUFFScoin in Unix.
 
 Note
 ---------------------
@@ -50,7 +50,7 @@ System requirements
 --------------------
 
 C++ compilers are memory-hungry. It is recommended to have at least 1 GB of
-memory available when compiling PuffsCoin Core. With 512MB of memory or less
+memory available when compiling PUFFScoin Core. With 512MB of memory or less
 compilation will take much longer due to swap thrashing.
 
 Dependency Build Instructions: Ubuntu & Debian
@@ -62,12 +62,6 @@ Build requirements:
 For Ubuntu 12.04 and later or Debian 7 and later libboost-all-dev has to be installed:
 
 	sudo apt-get install libboost-all-dev
-
- db4.8 packages are available [here](https://launchpad.net/~bitcoin/+archive/bitcoin).
- You can add the repository using the following command:
-
-        sudo add-apt-repository ppa:bitcoin/bitcoin
-        sudo apt-get update
 
  Ubuntu 12.04 and later have packages for libdb5.1-dev and libdb5.1++-dev,
  but using these will break binary wallet compatibility, and is not recommended.
@@ -130,10 +124,10 @@ Berkeley DB
 It is recommended to use Berkeley DB 4.8. If you have to build it yourself:
 
 ```bash
-PuffsCoin_ROOT=$(pwd)
+PUFFScoin_ROOT=$(pwd)
 
 # Pick some path to install BDB to, here we create a directory within the puffscoin directory
-BDB_PREFIX="${PuffsCoin_ROOT}/db4"
+BDB_PREFIX="${PUFFScoin_ROOT}/db4"
 mkdir -p $BDB_PREFIX
 
 # Fetch the source and verify that it is not tampered with
@@ -148,8 +142,8 @@ cd db-4.8.30.NC/build_unix/
 ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
 make install
 
-# Configure PuffsCoin Core to use our own-built instance of BDB
-cd $PuffsCoin_ROOT
+# Configure PUFFScoin Core to use our own-built instance of BDB
+cd $PUFFScoin_ROOT
 ./configure (other args...) LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
 ```
 
@@ -166,7 +160,7 @@ If you need to build Boost yourself:
 
 Security
 --------
-To help make your PuffsCoin installation more secure by making certain attacks impossible to
+To help make your PUFFScoin installation more secure by making certain attacks impossible to
 exploit even if a vulnerability is found, binaries are hardened by default.
 This can be disabled with:
 
