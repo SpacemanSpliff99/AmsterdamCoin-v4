@@ -1,21 +1,13 @@
 Gitian building
 ================
 
-*Setup instructions for a gitian build of PuffsCoin using a Debian VM or physical system.*
+*Setup instructions for a gitian build of PUFFScoin using a Debian VM or physical system.*
 
-Gitian is the deterministic build process that is used to build the PuffsCoin
-Core executables. It provides a way to be reasonably sure that the
-executables are really built from source on GitHub. It also makes sure that
-the same, tested dependencies are used and statically built into the executable.
+Gitian is the deterministic build process that is used to build the PUFFScoin Core executables. It provides a way to be reasonably sure that the executables are really built from our official source on GitHub. It also makes sure that the same, tested dependencies are used and statically built into the executable.
 
-Multiple developers build the source code by following a specific descriptor
-("recipe"), cryptographically sign the result, and upload the resulting signature.
-These results are compared and only if they match, the build is accepted and uploaded
-to puffscoin-crypto.com.
+Multiple developers build the source code by following a specific descriptor ("recipe"), cryptographically sign the result, and upload the resulting signature. These results are compared and only if they match, the build is accepted and uploaded to our project websites at www.puffscoin.com and www.leafycauldron.ca.
 
-More independent gitian builders are needed, which is why I wrote this
-guide. It is preferred to follow these steps yourself instead of using someone else's
-VM image to avoid 'contaminating' the build.
+It is preferred to follow these steps yourself instead of using someone else's VM image to avoid 'contaminating' the build.
 
 Table of Contents
 ------------------
@@ -239,13 +231,16 @@ Then set up LXC and the rest with the following, which is a complex jumble of se
 # the version of lxc-start in Debian 7.4 needs to run as root, so make sure
 # that the build script can exectute it without providing a password
 echo "%sudo ALL=NOPASSWD: /usr/bin/lxc-start" > /etc/sudoers.d/gitian-lxc
+
 # add cgroup for LXC
 echo "cgroup  /sys/fs/cgroup  cgroup  defaults  0   0" >> /etc/fstab
+
 # make /etc/rc.local script that sets up bridge between guest and host
 echo '#!/bin/sh -e' > /etc/rc.local
 echo 'brctl addbr br0' >> /etc/rc.local
 echo 'ifconfig br0 10.0.3.2/24 up' >> /etc/rc.local
 echo 'exit 0' >> /etc/rc.local
+
 # make sure that USE_LXC is always set when logging in as debian,
 # and configure LXC IP addresses
 echo 'export USE_LXC=1' >> /home/debian/.profile
@@ -281,8 +276,8 @@ Clone the git repositories for puffscoin and gitian and then checkout the puffsc
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/puffscoin-crypto/puffscoin.git
-cd puffscoin
+git clone https://github.com/SpacemanSpliff99/PUFFSco..git
+cd puffsco.
 git checkout v${VERSION}
 cd ..
 ```
@@ -326,10 +321,10 @@ under 'Fetch and build inputs' to install sources which require manual intervent
 the next step: 'Seed the Gitian sources cache', which will fetch all necessary source files allowing
 for gitian to work offline.
 
-Building PuffsCoin
+Building PUFFScoin
 ----------------
 
-To build PuffsCoin (for Linux, OSX and Windows) just follow the steps under 'perform
+To build PUFFScoin (for Linux, OSX and Windows) just follow the steps under 'perform
 gitian builds' in [doc/release-process.md](release-process.md) in the puffscoin repository.
 
 This may take a long time as it also builds the dependencies needed for each descriptor.
@@ -377,7 +372,7 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/crowning-/puffscoin.git
+URL=https://github.com/SpacemanSpliff99/PUFFSco..git
 COMMIT=b616fb8ef0d49a919b72b0388b091aaec5849b96
 ./bin/gbuild --commit puffscoin=${COMMIT} --url puffscoin=${URL} ../puffscoin/contrib/gitian-descriptors/gitian-linux.yml
 ./bin/gbuild --commit puffscoin=${COMMIT} --url puffscoin=${URL} ../puffscoin/contrib/gitian-descriptors/gitian-win.yml
@@ -408,6 +403,6 @@ Uploading signatures (not yet implemented)
 ---------------------
 
 In the future it will be possible to push your signatures (both the `.assert` and `.assert.sig` files) to the
-[puffscoin/gitian.sigs](https://github.com/puffscoin-crypto/gitian.sigs/) repository, or if that's not possible to create a pull
+[puffscoin/gitian.sigs](https://github.com/SpacemanSpliff99/gitian.sigs) repository, or if that's not possible to create a pull
 request.
 There will be an official announcement when this repository is online.
