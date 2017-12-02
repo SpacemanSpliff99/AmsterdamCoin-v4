@@ -158,7 +158,7 @@ Threads
 
 - ThreadMapPort : Universal plug-and-play startup/shutdown
 
-- ThreadSocketHandler : Sends/Receives data from peers on port 8333.
+- ThreadSocketHandler : Sends/Receives data from peers on port 50420.
 
 - ThreadOpenAddedConnections : Opens network connections to added nodes.
 
@@ -170,7 +170,7 @@ Threads
 
 - ThreadFlushWalletDB : Close the wallet.dat file if it hasn't been used in 500ms.
 
-- ThreadRPCServer : Remote procedure call handler, listens on port 8332 for connections and services them.
+- ThreadRPCServer : Remote procedure call handler, listens on port 50710 for connections and services them.
 
 - BitcoinMiner : Generates bitcoins (if wallet is enabled).
 
@@ -179,8 +179,9 @@ Threads
 Ignoring IDE/editor files
 --------------------------
 
-In closed-source environments in which everyone uses the same IDE it is common
-to add temporary files it produces to the project-wide `.gitignore` file.
+In closed-source environments in which everyone uses the same Integrated Development 
+Environment it is common to add temporary files it produces to the project-wide 
+`.gitignore` file.
 
 However, in open source software such as PuffsCoin Core, where everyone uses
 their own editors/IDE/tools, it is less common. Only you know what files your
