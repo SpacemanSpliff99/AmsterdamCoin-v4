@@ -56,3 +56,4 @@ There is also a field named `bcconfirmations`. The value in this field represent
 * non-SwiftTX transaction received one confirmation from blockchain:
     * confirmations: 1
     * bcconfirmations: 1
+
