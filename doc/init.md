@@ -89,7 +89,7 @@ use old versions of Upstart and do not supply the start-stop-daemon uitility.
 Copy puffscoind.init to /etc/init.d/puffscoind. Test by running "service puffscoind start".
 
 Using this script, you can adjust the path and flags to the puffscoind program by
-setting the PuffsCoinD and FLAGS environment variables in the file
+setting the puffscoind and FLAGS environment variables in the file
 /etc/sysconfig/puffscoind. You can also use the DAEMONOPTS environment variable here.
 
 5. Auto-respawn
