@@ -2307,8 +2307,8 @@ Adresse: %4</translation>
         <translation>AMSs überweisen</translation>
     </message>
     <message>
-        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 AMS.</source>
-        <translation>SwiftTX unterstützt das Versenden von Beträgen dieser Höhe noch nicht. Transaktionen sind zur Zeit auf maximal %1 AMS begrenzt.</translation>
+        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 PUFFS.</source>
+        <translation>SwiftTX unterstützt das Versenden von Beträgen dieser Höhe noch nicht. Transaktionen sind zur Zeit auf maximal %1 PUFFS begrenzt.</translation>
     </message>
 </context>
 <context>
