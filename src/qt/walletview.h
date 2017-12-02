@@ -46,7 +46,7 @@ public:
     */
     void setClientModel(ClientModel* clientModel);
     /** Set the wallet model.
-        The wallet model represents a bitcoin wallet, and offers access to the list of transactions, address book and sending
+        The wallet model represents a PUFFScoin wallet, and offers access to the list of transactions, address book and sending
         functionality.
     */
     void setWalletModel(WalletModel* walletModel);
@@ -122,7 +122,7 @@ public slots:
     /** Show progress dialog e.g. for rescan */
     void showProgress(const QString& title, int nProgress);
 
-    /** Update selected AMS amount from transactionview */
+    /** Update selected PUFFS amount from transactionview */
     void trxAmount(QString amount);
 
 signals:
