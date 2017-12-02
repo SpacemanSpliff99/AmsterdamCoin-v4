@@ -1,7 +1,15 @@
 Masternode Budget API
 =======================
 
-PuffsCoin now supports full decentralized budgets that are paid directly from the blockchain via superblocks once per month.
+PUFFScoin supports full decentralized budgets, although the process as it is implemented in DASH, PIVX and other contemporaneous currencies, that are paid directly from the blockchain via superblocks, PUFFS willl use these funds to support the Veterans Endowment Fund, which will "spend" the accumulated PUFFS after each superblock (approximately every two weeks) through the Leafy Cauldron Apotheacary to support the offset prescribed medical cannabis not covered by Veterans Affairs Canada's 3-gram/day limit for Canadian Veterans in receipt of marijuana to treat wartime PTSD and other conditions.
+
+We feel it is important to set aside these funds in a meaningful way, as our goal is to provide medical cannabis to every veteran in Canada who is in need of assistance reaching their presciptive levels, we do plan on creating funds for which future projects builton to the PUFFScoin architecture can be proposed, voted upon and acted thru. Our current idea is to remit the PUFFScoins that are staked simply thru the Cauldron Wallet (50,000,000 PUFFS) in concert to the bi-weekly superblocks to a PUFFScoin Community Development wallet.
+
+This will ensure that Masternode operators and those who stake thru simple wallet activity will be more likely to approach a reward system near equilibrium in the Seesaw Reward algorithm, as the funds the masternode operators will vote upon community usage with will be taken from the staked balance of the Cauldron Wallet, owned by the Leafy Cauldron Apothecary.
+
+At equilibrium, the Cauldron Wallet will produce approx. 12,500 PUFFS/day (15% APR), or 175,000 PUFFS every "superblock period".  This will create a far larger revenue stream for PUFFScoin related projects that are proposed and implemented thru decentralized governance. Implementation of these features, other than creating the necessary wallet to build community funds, will be part of the second phase of PUFFScoin development throughout the fiscal year 2018.
+
+Below is the MasterNode budget guide as prepared for contemporaneous currencies, as should be approached as a referrence at this point.
 
 Budgets go through a series of stages before being paid:
 * prepare - create a special transaction that destroys coins in order to make a proposal
