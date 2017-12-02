@@ -36,13 +36,13 @@ Sample initialization flow from _puffscoin-qt_ console (this needs to be done on
  - Start _puffscoin-qt_
  - Open console
  - Type "_keepass init_" in puffscoin-qt console
- - Keepass pops up and asks for an association id, fill that in, for example, "_mydrkwallet_"
- - You should get a response like this "_Association successful. Id: mydrkwalletpuffscoin - Key: AgQkcs6cI7v9tlSYKjG/+s8wJrGALHl3jLosJpPLzUE=_"
+ - Keepass pops up and asks for an association id, fill that in, for example, "_mypuffswallet_"
+ - You should get a response like this "_Association successful. Id: mypuffswalletpuffscoin - Key: AgQkcs6cI7v9tlSYKjG/+s8wJrGALHl3jLosJpPLzUE=_"
  - Edit _puffscoin.conf_ and fill in these values
 ```
 keepass=1
 keepasskey=AgQkcs6cI7v9tlSYKjG/+s8wJrGALHl3jLosJpPLzUE=
-keepassid=mydrkwallet
+keepassid=mypuffswallet
 keepassname=testwallet
 ```
  - Restart _puffscoin-qt_
@@ -54,4 +54,4 @@ At this point, the association is made. The next action depends on your particul
 
 At this point, the passphrase is stored in KeePassHttp. When Unlocking the wallet, one can use _keepass_ as the passphrase to trigger retrieval of the password. This works from the RPC commands as well as the GUI.
 
-Extended guide with screenshots is also available: https://dashtalk.org/threads/keepass-integration.3620/
+***TODO*** We will add an extended guide with screenshots for KeePass integration as time permits. 
