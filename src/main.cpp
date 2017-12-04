@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The AmsterdamCoin developers
-// Copyright (c) 2017 The PuffsCoin developers
+// Copyright (c) 2017 The PUFFScoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -42,7 +42,7 @@ using namespace boost;
 using namespace std;
 
 #if defined(NDEBUG)
-#error "PuffsCoin cannot be compiled without assertions."
+#error "PUFFScoin cannot be compiled without assertions."
 #endif
 
 /**
@@ -1616,33 +1616,81 @@ int64_t GetBlockValue(int nHeight)
     }
 
     if (nHeight == 0) {
-        nSubsidy = 80000000 * COIN;
-    } else if (nHeight < 86400 && nHeight > 0) {
-        nSubsidy = 7.5 * COIN;
-    } else if (nHeight < 151200 && nHeight >= 86400) {
-        nSubsidy = 7.5 * COIN;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 151200) {
-        nSubsidy = 5 * COIN;
-    } else if (nHeight <= 302399 && nHeight > Params().LAST_POW_BLOCK()) {
-        nSubsidy = 4.75 * COIN;
-    } else if (nHeight <= 345599 && nHeight >= 302400) {
-        nSubsidy = 4.5 * COIN;
-    } else if (nHeight <= 388799 && nHeight >= 345600) {
-        nSubsidy = 4.25 * COIN;
-    } else if (nHeight <= 431999 && nHeight >= 388800) {
-        nSubsidy = 4 * COIN;
-    } else if (nHeight <= 475199 && nHeight >= 432000) {
-        nSubsidy = 3.75 * COIN;
-    } else if (nHeight <= 518399 && nHeight >= 475200) {
-        nSubsidy = 3.5 * COIN;
-    } else if (nHeight <= 561599 && nHeight >= 518400) {
-        nSubsidy = 3.25 * COIN;
-    } else if (nHeight <= 604799 && nHeight >= 561600) {
-        nSubsidy = 3 * COIN;
-    } else if (nHeight <= 647999 && nHeight >= 604800) {
-        nSubsidy = 2.25 * COIN;
-    } else if (nHeight >= 648000) {
+        nSubsidy = 100000000 * COIN;
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight > 0) {
         nSubsidy = 2 * COIN;
+    } else if (nHeight < 20160 && nHeight >= Params().LAST_POW_BLOCK())) {
+        nSubsidy = 3 * COIN;
+    } else if (nHeight <= 40320 && nHeight >= 20161) {
+        nSubsidy = 5 * COIN;
+    } else if (nHeight <= 60480 && nHeight >= 40321) {
+        nSubsidy = 10 * COIN;
+    } else if (nHeight <= 80640 && nHeight >= 60481) {
+        nSubsidy = 15 * COIN;
+    } else if (nHeight <= 100800 && nHeight >= 80641) {
+        nSubsidy = 22.5 * COIN;
+    } else if (nHeight <= 120960 && nHeight >= 100801) {
+        nSubsidy = 30 * COIN;
+    } else if (nHeight <= 141120 && nHeight >= 120961) {
+        nSubsidy = 40 * COIN;
+    } else if (nHeight <= 161280 && nHeight >= 141121) {
+        nSubsidy = 50 * COIN;
+    } else if (nHeight <= 181440 && nHeight >= 161281) {
+        nSubsidy = 62.5 * COIN;
+    } else if (nHeight <= 201600 && nHeight >= 181441) {
+        nSubsidy = 75 * COIN;
+    } else if (nHeight <= 221760 && nHeight >= 201601) {
+        nSubsidy = 90 * COIN;
+    } else if (nHeight <= 241920 && nHeight >= 221761) {
+        nSubsidy = 105 * COIN;
+    } else if (nHeight <= 262080 && nHeight >= 241921) {
+        nSubsidy = 122.5 * COIN;
+    } else if (nHeight <= 282240 && nHeight >= 262081) {
+        nSubsidy = 140 * COIN;
+    } else if (nHeight <= 302400 && nHeight >= 282241) {
+        nSubsidy = 160 * COIN;
+    } else if (nHeight <= 322560 && nHeight >= 302401) {
+        nSubsidy = 180 * COIN;
+    } else if (nHeight <= 342720 && nHeight >= 322561) {
+        nSubsidy = 200 * COIN;
+    } else if (nHeight <= 362880 && nHeight >= 342721) {
+        nSubsidy = 220 * COIN;
+    } else if (nHeight <= 383040 && nHeight >= 362881) {
+        nSubsidy = 230 * COIN;
+    } else if (nHeight <= 403200 && nHeight >= 383041) {
+        nSubsidy = 240 * COIN;
+    } else if (nHeight <= 483840 && nHeight >= 403201) {
+        nSubsidy = 250 * COIN;
+    } else if (nHeight <= 524160 && nHeight >= 483841) {
+        nSubsidy = 200 * COIN;
+    } else if (nHeight <= 564480 && nHeight >= 524161) {
+        nSubsidy = 150 * COIN;
+    } else if (nHeight <= 604800 && nHeight >= 564481) {
+        nSubsidy = 100 * COIN;
+    } else if (nHeight <= 645120 && nHeight >= 604801) {
+        nSubsidy = 87.5 * COIN;
+    } else if (nHeight <= 685440 && nHeight >= 645121) {
+        nSubsidy = 75 * COIN;
+    } else if (nHeight <= 725760 && nHeight >= 685441) {
+        nSubsidy = 62.5 * COIN;
+    } else if (nHeight <= 766080 && nHeight >= 725761) {
+        nSubsidy = 50 * COIN;
+    } else if (nHeight <= 806400 && nHeight >= 766081) {
+        nSubsidy = 45 * COIN;
+    } else if (nHeight <= 846720 && nHeight >= 806401) {
+        nSubsidy = 40 * COIN;
+    } else if (nHeight <= 887040 && nHeight >= 846721) {
+        nSubsidy = 35 * COIN;
+    } else if (nHeight <= 927360 && nHeight >= 887041) {
+        nSubsidy = 30 * COIN;
+    } else if (nHeight <= 967680 && nHeight >= 927361) {
+        nSubsidy = 27.5 * COIN;
+    } else if (nHeight <= 1008000 && nHeight >= 967681) {
+        nSubsidy = 25 * COIN;
+    } else if (nHeight <= 1048320 && nHeight >= 1008001) {
+        nSubsidy = 22.5 * COIN;    
+    } else if (nHeight >= 1048321) {
+        nSubsidy = 20 * COIN;
     } else {
         nSubsidy = 0 * COIN;
     }
