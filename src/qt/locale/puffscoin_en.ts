@@ -10,8 +10,8 @@
     </message>
     <message>
         <location line="+27"/>
-        <source>Create a new address</source>
-        <translation>Create a new address</translation>
+        <source>Create a new PUFFScoin address</source>
+        <translation>Create a new PUFFScoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -55,13 +55,13 @@
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+44"/>
-        <source>Choose the address to send coins to</source>
-        <translation>Choose the address to send coins to</translation>
+        <source>Choose the address to send PUFFScoin to</source>
+        <translation>Choose the address to send PUFFScoin to</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Choose the address to receive coins with</source>
-        <translation>Choose the address to receive coins with</translation>
+        <source>Choose the address to receive PUFFScoin with</source>
+        <translation>Choose the address to receive PUFFScoin with</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -80,13 +80,13 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your AmsterdamCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished"></translation>
+        <source>These are your PUFFScoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="These are your PUFFScoin addresses for sending payments. Always check the amount and the receiving address before sending coins."></translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your AmsterdamCoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation type="unfinished"></translation>
+        <source>These are your PUFFScoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation type="These are your PUFFScoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction."></translation>
     </message>
     <message>
         <location line="+6"/>
@@ -221,8 +221,8 @@
     </message>
     <message>
         <location line="+9"/>
-        <source>AmsterdamCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your AMSs from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished"></translation>
+        <source>PUFFScoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PUFFS from being stolen by malware infecting your computer.</source>
+        <translation>PUFFScoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PUFFS from being stolen by malware infecting your computer.></translation>
     </message>
     <message>
         <location line="-8"/>
@@ -231,8 +231,8 @@
     </message>
     <message>
         <location line="+0"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR AMS&lt;/b&gt;!</source>
-        <translation type="unfinished"></translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PUFFS&lt;/b&gt;!</source>
+        <translation> Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PUFFS&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -307,8 +307,8 @@
     </message>
     <message>
         <location line="+6"/>
-        <source>Enter a AmsterdamCoin Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation type="unfinished"></translation>
+        <source>Enter a PUFFScoin Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Enter a PUFFScoin Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -318,7 +318,7 @@
     </message>
     <message>
         <location line="-355"/>
-        <source>The AmsterdamCoin address to sign the message with</source>
+        <source>The PUFFScoin address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -360,7 +360,7 @@
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this AmsterdamCoin address</source>
+        <source>Sign the message to prove you own this PUFFScoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -391,12 +391,12 @@
     </message>
     <message>
         <location line="+25"/>
-        <source>The AmsterdamCoin address the message was signed with</source>
+        <source>The PUFFScoin address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+29"/>
-        <source>Verify the message to ensure it was signed with the specified AmsterdamCoin address</source>
+        <source>Verify the message to ensure it was signed with the specified PUFFScoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -771,17 +771,17 @@
     <message>
         <location line="-396"/>
         <location line="+831"/>
-        <source>AmsterdamCoin Core</source>
+        <source>PUFFScoin Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-652"/>
-        <source>Send coins to a AmsterdamCoin address</source>
+        <source>Send coins to a PUFFScoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Request payments (generates QR codes and amsterdamcoin: URIs)</source>
+        <source>Request payments (generates QR codes and PUFFScoin: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -796,27 +796,27 @@
     </message>
     <message>
         <location line="+29"/>
-        <source>&amp;About AmsterdamCoin Core</source>
+        <source>&amp;About PUFFScoin Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Show information about AmsterdamCoin Core</source>
+        <source>Show information about PUFFScoin Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Modify configuration options for AmsterdamCoin</source>
+        <source>Modify configuration options for PUFFScoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>Sign messages with your AmsterdamCoin addresses to prove you own them</source>
+        <source>Sign messages with your PUFFScoin addresses to prove you own them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified AmsterdamCoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified PUFFScoin addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -856,7 +856,7 @@
     </message>
     <message>
         <location line="+10"/>
-        <source>Open a AmsterdamCoin: URI or payment request</source>
+        <source>Open a PUFFScoin: URI or payment request</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -871,17 +871,17 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Show the AmsterdamCoin Core help message to get a list with possible AmsterdamCoin command-line options</source>
+        <source>Show the PUFFScoin Core help message to get a list with possible PUFFScoin command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+201"/>
-        <source>AmsterdamCoin Core client</source>
+        <source>PUFFScoin Core client</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location line="+190"/>
-        <source>%n active connection(s) to AmsterdamCoin network</source>
+        <source>%n active connection(s) to PUFFScoin network</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -1512,7 +1512,7 @@ Address: %4
     </message>
     <message>
         <location line="+0"/>
-        <source>AmsterdamCoin Core</source>
+        <source>PUFFScoin Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1523,7 +1523,7 @@ Address: %4
     </message>
     <message>
         <location line="+4"/>
-        <source>About AmsterdamCoin Core</source>
+        <source>About PUFFScoin Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1581,17 +1581,17 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Welcome to AmsterdamCoin Core.</source>
+        <source>Welcome to PUFFScoin Core.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>As this is the first time the program is launched, you can choose where AmsterdamCoin Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where PUFFScoin Core will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>AmsterdamCoin Core will download and store a copy of the AmsterdamCoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>PUFFScoin Core will download and store a copy of the PUFFScoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1606,7 +1606,7 @@ Address: %4
     </message>
     <message>
         <location filename="../intro.cpp" line="+77"/>
-        <source>AmsterdamCoin Core</source>
+        <source>PUFFScoin Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1809,8 +1809,8 @@ Address: %4
     </message>
     <message>
         <location line="+16"/>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other AmsterdamCoin addresses after it matures.
-To Add: enter percentage to give and AmsterdamCoin address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other PUFFScoin addresses after it matures.
+To Add: enter percentage to give and PUFFScoin address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
         <translation type="unfinished"></translation>
@@ -1975,12 +1975,12 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 2 separate masternodes to mix funds up to 10000 AMS</source>
+        <source>Use 2 separate masternodes to mix funds up to 10000 PUFFS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 8 separate masternodes to mix funds up to 10000 AMS</source>
+        <source>Use 8 separate masternodes to mix funds up to 10000 PUFFS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1990,12 +1990,12 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is the quickest and will cost about ~0.025 AMS to anonymize 10000 AMS</source>
+        <source>This option is the quickest and will cost about ~0.025 PUFFS to anonymize 10000 PUFFS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is moderately fast and will cost about 0.05 AMS to anonymize 10000 AMS</source>
+        <source>This option is moderately fast and will cost about 0.05 PUFFS to anonymize 10000 PUFFS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2005,7 +2005,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>0.1 AMS per 10000 AMS you anonymize.</source>
+        <source>0.1 PUFFS per 10000 PUFFS you anonymize.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2017,17 +2017,17 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="-27"/>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening AmsterdamCoin&apos;s configuration screen.</source>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening PUFFScoin&apos;s configuration screen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening AmsterdamCoin&apos;s configuration screen.</source>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening PUFFScoin&apos;s configuration screen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening AmsterdamCoin&apos;s configuration screen.</source>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening PUFFScoin&apos;s configuration screen.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2103,7 +2103,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+33"/>
-        <source>Automatically open the AmsterdamCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the PUFFScoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2128,12 +2128,12 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="-179"/>
-        <source>Automatically start AmsterdamCoin after logging in to the system.</source>
+        <source>Automatically start PUFFScoin after logging in to the system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start AmsterdamCoin on system login</source>
+        <source>&amp;Start PUFFScoin on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2153,7 +2153,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+15"/>
-        <source>Amount of AmsterdamCoin to keep anonymized</source>
+        <source>Amount of PUFFScoin to keep anonymized</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2188,7 +2188,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+192"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting AmsterdamCoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting PUFFScoin.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2204,7 +2204,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+17"/>
-        <source>Connect to the AmsterdamCoin network through a SOCKS5 proxy.</source>
+        <source>Connect to the PUFFScoin network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2401,7 +2401,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
         <location line="+10"/>
         <location line="+1015"/>
         <location line="+93"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the AmsterdamCoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PUFFScoin network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2693,7 +2693,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+114"/>
-        <source>URI cannot be parsed! This can be caused by an invalid AmsterdamCoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid PUFFScoin address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2801,7 +2801,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+113"/>
-        <source>Enter a AmsterdamCoin address (e.g. %1)</source>
+        <source>Enter a PUFFScoin address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2990,7 +2990,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+149"/>
-        <source>Open the AmsterdamCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the PUFFScoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3202,7 +3202,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="-36"/>
-        <source>Welcome to the AmsterdamCoin RPC console.</source>
+        <source>Welcome to the PUFFScoin RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3657,12 +3657,12 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="-165"/>
-        <source>If the custom fee is set to 1000 uAMSs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uAMSs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uAMSs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 PUFFS and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 PUFFS in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 PUFFS. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>If the custom fee is set to 1000 uAMSs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uAMSs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uAMSs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 PUFFS and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 PUFFS in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 PUFFS. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3801,7 +3801,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+614"/>
-        <source>Warning: Invalid AmsterdamCoin address</source>
+        <source>Warning: Invalid PUFFScoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3940,7 +3940,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+18"/>
-        <source>The AmsterdamCoin address to send the payment to</source>
+        <source>The PUFFScoin address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4029,7 +4029,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     <name>ShutdownWindow</name>
     <message>
         <location filename="../utilitydialog.cpp" line="+42"/>
-        <source>AmsterdamCoin Core is shutting down...</source>
+        <source>PUFFScoin Core is shutting down...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4057,7 +4057,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+18"/>
-        <source>The AmsterdamCoin address to sign the message with</source>
+        <source>The PUFFScoin address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4099,7 +4099,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this AmsterdamCoin address</source>
+        <source>Sign the message to prove you own this PUFFScoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4109,7 +4109,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+37"/>
-        <source>Verify the message to ensure it was signed with the specified AmsterdamCoin address</source>
+        <source>Verify the message to ensure it was signed with the specified PUFFScoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4224,7 +4224,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+36"/>
-        <source>AmsterdamCoin Core</source>
+        <source>PUFFScoin Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4244,7 +4244,7 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+1"/>
-        <source>The AmsterdamCoin Core developers</source>
+        <source>The PUFFScoin Core developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4951,13 +4951,13 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
         <location filename="../walletmodel.cpp" line="+274"/>
         <location line="+9"/>
         <location line="+9"/>
-        <source>Send Coins</source>
-        <translation>Send Coins</translation>
+        <source>Send PUFFScoins/source>
+        <translation>Send PUFFScoins</translation>
     </message>
     <message>
         <location line="-18"/>
         <location line="+9"/>
-        <source>SwiftTX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 AMS.</source>
+        <source>SwiftTX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PUFFS.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5118,12 +5118,12 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in AMS/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <source>Fees (in PUFFS/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in AMS/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <source>Fees (in PUFFS/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5248,22 +5248,22 @@ https://www.transifex.com/amsterdamcoin-project/amsterdamcoin-project-translatio
     </message>
     <message>
         <location line="+4"/>
-        <source>To use amsterdamcoind, or the -server option to amsterdamcoin-qt, you must set an rpcpassword in the configuration file:
+        <source>To use puffscoind, or the -server option to puffscoin-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=amsterdamcoinrpc
+rpcuser=puffscoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;AmsterdamCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;PUFFScoin Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Unable to bind to %s on this computer. AmsterdamCoin Core is probably already running.</source>
+        <source>Unable to bind to %s on this computer. PUFFScoin Core is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5273,12 +5273,12 @@ for example: alertnotify=echo %%s | mail -s &quot;AmsterdamCoin Alert&quot; admi
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 AMS.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PUFFS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 AMS.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 PUFFS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5298,7 +5298,7 @@ for example: alertnotify=echo %%s | mail -s &quot;AmsterdamCoin Alert&quot; admi
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong AmsterdamCoin Core will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong PUFFScoin Core will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5338,8 +5338,8 @@ for example: alertnotify=echo %%s | mail -s &quot;AmsterdamCoin Alert&quot; admi
     </message>
     <message>
         <location line="+3"/>
-        <source>(50020 could be used only on mainnet)</source>
-        <translation type="unfinished">(50020 could be used only on mainnet)</translation>
+        <source>(50710 could be used only on mainnet)</source>
+        <translation type="unfinished">(50710 could be used only on mainnet)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5353,7 +5353,7 @@ for example: alertnotify=echo %%s | mail -s &quot;AmsterdamCoin Alert&quot; admi
     </message>
     <message>
         <location line="+1"/>
-        <source>(must be 50020 for mainnet)</source>
+        <source>(must be 50710 for mainnet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5490,7 +5490,7 @@ for example: alertnotify=echo %%s | mail -s &quot;AmsterdamCoin Alert&quot; admi
     </message>
     <message>
         <location line="+1"/>
-        <source>Copyright (C) 2015-%i The AmsterdamCoin Core Developers</source>
+        <source>Copyright (C) 2017-%i The PUFFScoin Core Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5580,7 +5580,7 @@ for example: alertnotify=echo %%s | mail -s &quot;AmsterdamCoin Alert&quot; admi
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of AmsterdamCoin Core</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of PUFFScoin Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5800,7 +5800,7 @@ for example: alertnotify=echo %%s | mail -s &quot;AmsterdamCoin Alert&quot; admi
     </message>
     <message>
         <location line="+1"/>
-        <source>Keep N AMS anonymized (default: %u)</source>
+        <source>Keep N PUFFS anonymized (default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6390,7 +6390,7 @@ for example: alertnotify=echo %%s | mail -s &quot;AmsterdamCoin Alert&quot; admi
     </message>
     <message>
         <location line="+1"/>
-        <source>Use the test network</source>
+        <source>Use the PUFFScoin test network</source>
         <translation type="unfinished">Use the test network</translation>
     </message>
     <message>
