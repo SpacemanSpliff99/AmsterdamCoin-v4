@@ -8,7 +8,7 @@
 #else
 #define UNUSED
 #endif
-static const char UNUSED *amsterdamcoin_strings[] = {
+static const char UNUSED *puffscoin_strings[] = {
 QT_TRANSLATE_NOOP("puffscoin-core", ""
 "(1 = keep tx meta data e.g. account owner and payment request information, 2 "
 "= drop tx meta data)"),
@@ -74,10 +74,10 @@ QT_TRANSLATE_NOOP("puffscoin-core", ""
 "Execute command when the best block changes (%s in cmd is replaced by block "
 "hash)"),
 QT_TRANSLATE_NOOP("puffscoin-core", ""
-"Fees (in AMS/Kb) smaller than this are considered zero fee for relaying "
+"Fees (in PUFFS/Kb) smaller than this are considered zero fee for relaying "
 "(default: %s)"),
 QT_TRANSLATE_NOOP("puffscoin-core", ""
-"Fees (in AMS/Kb) smaller than this are considered zero fee for transaction "
+"Fees (in PUFFS/Kb) smaller than this are considered zero fee for transaction "
 "creation (default: %s)"),
 QT_TRANSLATE_NOOP("puffscoin-core", ""
 "Flush database activity from memory pool to disk log every <n> megabytes "
