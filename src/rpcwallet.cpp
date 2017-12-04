@@ -82,13 +82,13 @@ Value getnewaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getnewaddress ( \"account\" )\n"
-            "\nReturns a new PuffsCoin address for receiving payments.\n"
+            "\nReturns a new PUFFScoin address for receiving payments.\n"
             "If 'account' is specified (recommended), it is added to the address book \n"
             "so payments received with the address will be credited to 'account'.\n"
             "\nArguments:\n"
             "1. \"account\"        (string, optional) The account name for the address to be linked to. if not provided, the default account \"\" is used. It can also be set to the empty string \"\" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.\n"
             "\nResult:\n"
-            "\"puffscoinaddress\"    (string) The new puffscoin address\n"
+            "\"puffscoinaddress\"    (string) The new PUFFScoin address\n"
             "\nExamples:\n" +
             HelpExampleCli("getnewaddress", "") + HelpExampleCli("getnewaddress", "\"\"") + HelpExampleCli("getnewaddress", "\"myaccount\"") + HelpExampleRpc("getnewaddress", "\"myaccount\""));
 
@@ -151,11 +151,11 @@ Value getaccountaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "getaccountaddress \"account\"\n"
-            "\nReturns the current PuffsCoin address for receiving payments to this account.\n"
+            "\nReturns the current PUFFScoin address for receiving payments to this account.\n"
             "\nArguments:\n"
             "1. \"account\"       (string, required) The account name for the address. It can also be set to the empty string \"\" to represent the default account. The account does not need to exist, it will be created and a new address created  if there is no account by the given name.\n"
             "\nResult:\n"
-            "\"puffscoinaddress\"   (string) The account puffscoin address\n"
+            "\"puffscoinaddress\"   (string) The account PUFFScoin address\n"
             "\nExamples:\n" +
             HelpExampleCli("getaccountaddress", "") + HelpExampleCli("getaccountaddress", "\"\"") + HelpExampleCli("getaccountaddress", "\"myaccount\"") + HelpExampleRpc("getaccountaddress", "\"myaccount\""));
 
@@ -175,10 +175,10 @@ Value getrawchangeaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getrawchangeaddress\n"
-            "\nReturns a new PuffsCoin address, for receiving change.\n"
+            "\nReturns a new PUFFScoin address, for receiving change.\n"
             "This is for use with raw transactions, NOT normal use.\n"
             "\nResult:\n"
-            "\"address\"    (string) The address\n"
+            "\"address\"    (string) The PUFFScoin address\n"
             "\nExamples:\n" +
             HelpExampleCli("getrawchangeaddress", "") + HelpExampleRpc("getrawchangeaddress", ""));
 
@@ -205,14 +205,14 @@ Value setaccount(const Array& params, bool fHelp)
             "setaccount \"puffscoinaddress\" \"account\"\n"
             "\nSets the account associated with the given address.\n"
             "\nArguments:\n"
-            "1. \"puffscoinaddress\"  (string, required) The puffscoin address to be associated with an account.\n"
+            "1. \"puffscoinaddress\"  (string, required) The PUFFScoin address to be associated with an account.\n"
             "2. \"account\"         (string, required) The account to assign the address to.\n"
             "\nExamples:\n" +
             HelpExampleCli("setaccount", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" \"tabby\"") + HelpExampleRpc("setaccount", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\", \"tabby\""));
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PuffsCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PUFFScoin address");
 
 
     string strAccount;
@@ -242,7 +242,7 @@ Value getaccount(const Array& params, bool fHelp)
             "getaccount \"puffscoinaddress\"\n"
             "\nReturns the account associated with the given address.\n"
             "\nArguments:\n"
-            "1. \"puffscoinaddress\"  (string, required) The puffscoin address for account lookup.\n"
+            "1. \"puffscoinaddress\"  (string, required) The PUFFScoin address for account lookup.\n"
             "\nResult:\n"
             "\"accountname\"        (string) the account address\n"
             "\nExamples:\n" +
@@ -250,7 +250,7 @@ Value getaccount(const Array& params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PuffsCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PUFFScoin address");
 
     string strAccount;
     map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(address.Get());
@@ -270,7 +270,7 @@ Value getaddressesbyaccount(const Array& params, bool fHelp)
             "1. \"account\"  (string, required) The account name.\n"
             "\nResult:\n"
             "[                     (json array of string)\n"
-            "  \"puffscoinaddress\"  (string) a puffscoin address associated with the given account\n"
+            "  \"puffscoinaddress\"  (string) a PUFFScoin address associated with the given account\n"
             "  ,...\n"
             "]\n"
             "\nExamples:\n" +
@@ -318,7 +318,7 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
     }
     if (!pwalletMain->CommitTransaction(wtxNew, reservekey, (!fUseIX ? "tx" : "ix")))
-        throw JSONRPCError(RPC_WALLET_ERROR, "Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "Error: The transaction was rejected! This might happen if some of the PUFFScoin in your wallet were already spent, such as if you used a copy of wallet.dat and PUFFScoin were spent in the copy but not marked as spent here.");
 }
 
 Value sendtoaddress(const Array& params, bool fHelp)
@@ -329,8 +329,8 @@ Value sendtoaddress(const Array& params, bool fHelp)
             "\nSend an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001\n" +
             HelpRequiringPassphrase() +
             "\nArguments:\n"
-            "1. \"puffscoinaddress\"  (string, required) The puffscoin address to send to.\n"
-            "2. \"amount\"      (numeric, required) The amount in btc to send. eg 0.1\n"
+            "1. \"puffscoinaddress\"  (string, required) The PUFFScoin address to send to.\n"
+            "2. \"amount\"      (numeric, required) The amount in PUFFS to send. eg 0.1\n"
             "3. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
             "                             This is not part of the transaction, just kept in your wallet.\n"
             "4. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
@@ -343,7 +343,7 @@ Value sendtoaddress(const Array& params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PuffsCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PUFFScoin address");
 
     // Amount
     CAmount nAmount = AmountFromValue(params[1]);
@@ -370,8 +370,8 @@ Value sendtoaddressix(const Array& params, bool fHelp)
             "\nSend an amount to a given address. The amount is a real and is rounded to the nearest 0.00000001\n" +
             HelpRequiringPassphrase() +
             "\nArguments:\n"
-            "1. \"puffscoinaddress\"  (string, required) The puffscoin address to send to.\n"
-            "2. \"amount\"      (numeric, required) The amount in btc to send. eg 0.1\n"
+            "1. \"puffscoinaddress\"  (string, required) The PUFFScoin address to send to.\n"
+            "2. \"amount\"      (numeric, required) The amount in PUFFS to send. eg 0.1\n"
             "3. \"comment\"     (string, optional) A comment used to store what the transaction is for. \n"
             "                             This is not part of the transaction, just kept in your wallet.\n"
             "4. \"comment-to\"  (string, optional) A comment to store the name of the person or organization \n"
@@ -384,7 +384,7 @@ Value sendtoaddressix(const Array& params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PuffsCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PUFFScoin address");
 
     // Amount
     CAmount nAmount = AmountFromValue(params[1]);
@@ -414,8 +414,8 @@ Value listaddressgroupings(const Array& params, bool fHelp)
             "[\n"
             "  [\n"
             "    [\n"
-            "      \"puffscoinaddress\",     (string) The puffscoin address\n"
-            "      amount,                 (numeric) The amount in btc\n"
+            "      \"puffscoinaddress\",     (string) The PUFFScoin address\n"
+            "      amount,                 (numeric) The amount in PUFFS\n"
             "      \"account\"             (string, optional) The account\n"
             "    ]\n"
             "    ,...\n"
@@ -453,7 +453,7 @@ Value signmessage(const Array& params, bool fHelp)
             "\nSign a message with the private key of an address" +
             HelpRequiringPassphrase() + "\n"
                                         "\nArguments:\n"
-                                        "1. \"puffscoinaddress\"  (string, required) The puffscoin address to use for the private key.\n"
+                                        "1. \"puffscoinaddress\"  (string, required) The PUFFScoin address to use for the private key.\n"
                                         "2. \"message\"         (string, required) The message to create a signature of.\n"
                                         "\nResult:\n"
                                         "\"signature\"          (string) The signature of the message encoded in base 64\n"
@@ -471,7 +471,7 @@ Value signmessage(const Array& params, bool fHelp)
 
     CBitcoinAddress addr(strAddress);
     if (!addr.IsValid())
-        throw JSONRPCError(RPC_TYPE_ERROR, "Invalid address");
+        throw JSONRPCError(RPC_TYPE_ERROR, "Invalid PUFFScoin address");
 
     CKeyID keyID;
     if (!addr.GetKeyID(keyID))
@@ -497,12 +497,12 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "getreceivedbyaddress \"puffscoinaddress\" ( minconf )\n"
-            "\nReturns the total amount received by the given puffscoinaddress in transactions with at least minconf confirmations.\n"
+            "\nReturns the total amount received by the given PUFFScoin address in transactions with at least minconf confirmations.\n"
             "\nArguments:\n"
-            "1. \"puffscoinaddress\"  (string, required) The puffscoin address for transactions.\n"
+            "1. \"puffscoinaddress\"  (string, required) The PUFFScoin address for transactions.\n"
             "2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
             "\nResult:\n"
-            "amount   (numeric) The total amount in btc received at this address.\n"
+            "amount   (numeric) The total amount in PUFFS received at this address.\n"
             "\nExamples:\n"
             "\nThe amount from transactions with at least 1 confirmation\n" +
             HelpExampleCli("getreceivedbyaddress", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\"") +
@@ -513,7 +513,7 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
     // puffscoin address
     CBitcoinAddress address = CBitcoinAddress(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PuffsCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PUFFScoin address");
     CScript scriptPubKey = GetScriptForDestination(address.Get());
     if (!IsMine(*pwalletMain, scriptPubKey))
         return (double)0.0;
@@ -550,7 +550,7 @@ Value getreceivedbyaccount(const Array& params, bool fHelp)
             "1. \"account\"      (string, required) The selected account, may be the default account using \"\".\n"
             "2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
             "\nResult:\n"
-            "amount              (numeric) The total amount in btc received for this account.\n"
+            "amount              (numeric) The total amount in PUFFS received for this account.\n"
             "\nExamples:\n"
             "\nAmount received by the default account with at least 1 confirmation\n" +
             HelpExampleCli("getreceivedbyaccount", "\"\"") +
@@ -631,7 +631,7 @@ Value getbalance(const Array& params, bool fHelp)
             "2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
             "3. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')\n"
             "\nResult:\n"
-            "amount              (numeric) The total amount in btc received for this account.\n"
+            "amount              (numeric) The total amount in PUFFS received for this account.\n"
             "\nExamples:\n"
             "\nThe total amount in the server across all accounts\n" +
             HelpExampleCli("getbalance", "") +
@@ -699,7 +699,7 @@ Value movecmd(const Array& params, bool fHelp)
     if (fHelp || params.size() < 3 || params.size() > 5)
         throw runtime_error(
             "move \"fromaccount\" \"toaccount\" amount ( minconf \"comment\" )\n"
-            "\nMove a specified amount from one account in your wallet to another.\n"
+            "\nMove a specified amount from one PUFFScoin account in your wallet to another.\n"
             "\nArguments:\n"
             "1. \"fromaccount\"   (string, required) The name of the account to move funds from. May be the default account using \"\".\n"
             "2. \"toaccount\"     (string, required) The name of the account to move funds to. May be the default account using \"\".\n"
@@ -708,9 +708,9 @@ Value movecmd(const Array& params, bool fHelp)
             "\nResult:\n"
             "true|false           (boolean) true if successfull.\n"
             "\nExamples:\n"
-            "\nMove 0.01 btc from the default account to the account named tabby\n" +
+            "\nMove 0.01 PUFFS from the default account to the account named tabby\n" +
             HelpExampleCli("move", "\"\" \"tabby\" 0.01") +
-            "\nMove 0.01 btc timotei to akiko with a comment and funds have 6 confirmations\n" + HelpExampleCli("move", "\"timotei\" \"akiko\" 0.01 6 \"happy birthday!\"") +
+            "\nMove 0.01 PUFFS timotei to akiko with a comment and funds have 6 confirmations\n" + HelpExampleCli("move", "\"timotei\" \"akiko\" 0.01 6 \"happy birthday!\"") +
             "\nAs a json rpc call\n" + HelpExampleRpc("move", "\"timotei\", \"akiko\", 0.01, 6, \"happy birthday!\""));
 
     string strFrom = AccountFromValue(params[0]);
@@ -761,13 +761,13 @@ Value sendfrom(const Array& params, bool fHelp)
     if (fHelp || params.size() < 3 || params.size() > 6)
         throw runtime_error(
             "sendfrom \"fromaccount\" \"topuffscoinaddress\" amount ( minconf \"comment\" \"comment-to\" )\n"
-            "\nSent an amount from an account to a puffscoin address.\n"
+            "\nSent an amount from an account to a PUFFScoin address.\n"
             "The amount is a real and is rounded to the nearest 0.00000001." +
             HelpRequiringPassphrase() + "\n"
                                         "\nArguments:\n"
                                         "1. \"fromaccount\"       (string, required) The name of the account to send funds from. May be the default account using \"\".\n"
-                                        "2. \"topuffscoinaddress\"  (string, required) The puffscoin address to send funds to.\n"
-                                        "3. amount                (numeric, required) The amount in btc. (transaction fee is added on top).\n"
+                                        "2. \"topuffscoinaddress\"  (string, required) The PUFFScoin address to send funds to.\n"
+                                        "3. amount                (numeric, required) The amount in PUFFS. (transaction fee is added on top).\n"
                                         "4. minconf               (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
                                         "5. \"comment\"           (string, optional) A comment used to store what the transaction is for. \n"
                                         "                                     This is not part of the transaction, just kept in your wallet.\n"
@@ -777,7 +777,7 @@ Value sendfrom(const Array& params, bool fHelp)
                                         "\nResult:\n"
                                         "\"transactionid\"        (string) The transaction id.\n"
                                         "\nExamples:\n"
-                                        "\nSend 0.01 btc from the default account to the address, must have at least 1 confirmation\n" +
+                                        "\nSend 0.01 PUFFS from the default account to the address, must have at least 1 confirmation\n" +
             HelpExampleCli("sendfrom", "\"\" \"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" 0.01") +
             "\nSend 0.01 from the tabby account to the given address, funds must have at least 6 confirmations\n" + HelpExampleCli("sendfrom", "\"tabby\" \"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" 0.01 6 \"donation\" \"seans outpost\"") +
             "\nAs a json rpc call\n" + HelpExampleRpc("sendfrom", "\"tabby\", \"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\", 0.01, 6, \"donation\", \"seans outpost\""));
@@ -785,7 +785,7 @@ Value sendfrom(const Array& params, bool fHelp)
     string strAccount = AccountFromValue(params[0]);
     CBitcoinAddress address(params[1].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PuffsCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PUFFScoin address");
     CAmount nAmount = AmountFromValue(params[2]);
     int nMinDepth = 1;
     if (params.size() > 3)
@@ -822,7 +822,7 @@ Value sendmany(const Array& params, bool fHelp)
                                         "1. \"fromaccount\"         (string, required) The account to send the funds from, can be \"\" for the default account\n"
                                         "2. \"amounts\"             (string, required) A json object with addresses and amounts\n"
                                         "    {\n"
-                                        "      \"address\":amount   (numeric) The puffscoin address is the key, the numeric amount in btc is the value\n"
+                                        "      \"address\":amount   (numeric) The PUFFScoin address is the key, the numeric amount in PUFFS is the value\n"
                                         "      ,...\n"
                                         "    }\n"
                                         "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
@@ -854,7 +854,7 @@ Value sendmany(const Array& params, bool fHelp)
     BOOST_FOREACH (const Pair& s, sendTo) {
         CBitcoinAddress address(s.name_);
         if (!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid PuffsCoin address: ") + s.name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid PUFFScoin address: ") + s.name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ") + s.name_);
@@ -895,7 +895,7 @@ Value addmultisigaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() < 2 || params.size() > 3) {
         string msg = "addmultisigaddress nrequired [\"key\",...] ( \"account\" )\n"
                      "\nAdd a nrequired-to-sign multisignature address to the wallet.\n"
-                     "Each key is a PuffsCoin address or hex-encoded public key.\n"
+                     "Each key is a PUFFScoin address or hex-encoded public key.\n"
                      "If 'account' is specified, assign address to that account.\n"
 
                      "\nArguments:\n"
@@ -908,7 +908,7 @@ Value addmultisigaddress(const Array& params, bool fHelp)
                      "3. \"account\"      (string, optional) An account to assign the addresses to.\n"
 
                      "\nResult:\n"
-                     "\"puffscoinaddress\"  (string) A puffscoin address associated with the keys.\n"
+                     "\"puffscoinaddress\"  (string) A PUFFScoin address associated with the keys.\n"
 
                      "\nExamples:\n"
                      "\nAdd a multisig address from 2 addresses\n" +
@@ -1078,7 +1078,7 @@ Value listreceivedbyaddress(const Array& params, bool fHelp)
             "    \"involvesWatchonly\" : \"true\",    (bool) Only returned if imported addresses were involved in transaction\n"
             "    \"address\" : \"receivingaddress\",  (string) The receiving address\n"
             "    \"account\" : \"accountname\",       (string) The account of the receiving address. The default account is \"\".\n"
-            "    \"amount\" : x.xxx,                  (numeric) The total amount in btc received by the address\n"
+            "    \"amount\" : x.xxx,                  (numeric) The total amount in PUFFS received by the address\n"
             "    \"confirmations\" : n                (numeric) The number of confirmations of the most recent transaction included\n"
             "    \"bcconfirmations\" : n              (numeric) The number of blockchain confirmations of the most recent transaction included\n"
             "  }\n"
@@ -1223,17 +1223,17 @@ Value listtransactions(const Array& params, bool fHelp)
             "  {\n"
             "    \"account\":\"accountname\",       (string) The account name associated with the transaction. \n"
             "                                                It will be \"\" for the default account.\n"
-            "    \"address\":\"puffscoinaddress\",    (string) The puffscoin address of the transaction. Not present for \n"
+            "    \"address\":\"puffscoinaddress\",    (string) The PUFFScoin address of the transaction. Not present for \n"
             "                                                move transactions (category = move).\n"
             "    \"category\":\"send|receive|move\", (string) The transaction category. 'move' is a local (off blockchain)\n"
             "                                                transaction between accounts, and not associated with an address,\n"
             "                                                transaction id or block. 'send' and 'receive' transactions are \n"
             "                                                associated with an address, transaction id and block details\n"
-            "    \"amount\": x.xxx,          (numeric) The amount in btc. This is negative for the 'send' category, and for the\n"
+            "    \"amount\": x.xxx,          (numeric) The amount in PUFFS. This is negative for the 'send' category, and for the\n"
             "                                         'move' category for moves outbound. It is positive for the 'receive' category,\n"
             "                                         and for the 'move' category for inbound funds.\n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"fee\": x.xxx,             (numeric) The amount of the fee in btc. This is negative and only available for the \n"
+            "    \"fee\": x.xxx,             (numeric) The amount of the fee in PUFFS. This is negative and only available for the \n"
             "                                         'send' category of transactions.\n"
             "    \"confirmations\": n,       (numeric) The number of confirmations for the transaction. Available for 'send' and \n"
             "                                         'receive' category of transactions.\n"
@@ -1398,12 +1398,12 @@ Value listsinceblock(const Array& params, bool fHelp)
             "{\n"
             "  \"transactions\": [\n"
             "    \"account\":\"accountname\",       (string) The account name associated with the transaction. Will be \"\" for the default account.\n"
-            "    \"address\":\"puffscoinaddress\",    (string) The puffscoin address of the transaction. Not present for move transactions (category = move).\n"
+            "    \"address\":\"puffscoinaddress\",    (string) The PUFFScoin address of the transaction. Not present for move transactions (category = move).\n"
             "    \"category\":\"send|receive\",     (string) The transaction category. 'send' has negative amounts, 'receive' has positive amounts.\n"
-            "    \"amount\": x.xxx,          (numeric) The amount in btc. This is negative for the 'send' category, and for the 'move' category for moves \n"
+            "    \"amount\": x.xxx,          (numeric) The amount in PUFFS. This is negative for the 'send' category, and for the 'move' category for moves \n"
             "                                          outbound. It is positive for the 'receive' category, and for the 'move' category for inbound funds.\n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"fee\": x.xxx,             (numeric) The amount of the fee in btc. This is negative and only available for the 'send' category of transactions.\n"
+            "    \"fee\": x.xxx,             (numeric) The amount of the fee in PUFFS. This is negative and only available for the 'send' category of transactions.\n"
             "    \"confirmations\": n,       (numeric) The number of confirmations for the transaction. Available for 'send' and 'receive' category of transactions.\n"
             "    \"bcconfirmations\" : n,    (numeric) The number of blockchain confirmations for the transaction. Available for 'send' and 'receive' category of transactions.\n"
             "    \"blockhash\": \"hashvalue\",     (string) The block hash containing the transaction. Available for 'send' and 'receive' category of transactions.\n"
@@ -1476,7 +1476,7 @@ Value gettransaction(const Array& params, bool fHelp)
             "2. \"includeWatchonly\"    (bool, optional, default=false) Whether to include watchonly addresses in balance calculation and details[]\n"
             "\nResult:\n"
             "{\n"
-            "  \"amount\" : x.xxx,        (numeric) The transaction amount in btc\n"
+            "  \"amount\" : x.xxx,        (numeric) The transaction amount in PUFFS\n"
             "  \"confirmations\" : n,     (numeric) The number of confirmations\n"
             "  \"bcconfirmations\" : n,   (numeric) The number of blockchain confirmations\n"
             "  \"blockhash\" : \"hash\",  (string) The block hash\n"
@@ -1488,9 +1488,9 @@ Value gettransaction(const Array& params, bool fHelp)
             "  \"details\" : [\n"
             "    {\n"
             "      \"account\" : \"accountname\",  (string) The account name involved in the transaction, can be \"\" for the default account.\n"
-            "      \"address\" : \"puffscoinaddress\",   (string) The puffscoin address involved in the transaction\n"
+            "      \"address\" : \"puffscoinaddress\",   (string) The PUFFScoin address involved in the transaction\n"
             "      \"category\" : \"send|receive\",    (string) The category, either 'send' or 'receive'\n"
-            "      \"amount\" : x.xxx                  (numeric) The amount in btc\n"
+            "      \"amount\" : x.xxx                  (numeric) The amount in PUFFS\n"
             "      \"vout\" : n,                       (numeric) the vout value\n"
             "    }\n"
             "    ,...\n"
@@ -1599,7 +1599,7 @@ Value walletpassphrase(const Array& params, bool fHelp)
         throw runtime_error(
             "walletpassphrase \"passphrase\" timeout ( anonymizeonly )\n"
             "\nStores the wallet decryption key in memory for 'timeout' seconds.\n"
-            "This is needed prior to performing transactions related to private keys such as sending AMSs\n"
+            "This is needed prior to performing transactions related to private keys such as sending PUFFS\n"
             "\nArguments:\n"
             "1. \"passphrase\"     (string, required) The wallet passphrase\n"
             "2. timeout            (numeric, required) The time to keep the decryption key in seconds.\n"
@@ -1732,7 +1732,7 @@ Value encryptwallet(const Array& params, bool fHelp)
             "\nExamples:\n"
             "\nEncrypt you wallet\n" +
             HelpExampleCli("encryptwallet", "\"my pass phrase\"") +
-            "\nNow set the passphrase to use the wallet, such as for signing or sending AMSs\n" + HelpExampleCli("walletpassphrase", "\"my pass phrase\"") +
+            "\nNow set the passphrase to use the wallet, such as for signing or sending PUFFS\n" + HelpExampleCli("walletpassphrase", "\"my pass phrase\"") +
             "\nNow we can so something like sign\n" + HelpExampleCli("signmessage", "\"puffscoinaddress\" \"test message\"") +
             "\nNow lock the wallet again by removing the passphrase\n" + HelpExampleCli("walletlock", "") +
             "\nAs a json rpc call\n" + HelpExampleRpc("encryptwallet", "\"my pass phrase\""));
@@ -1760,7 +1760,7 @@ Value encryptwallet(const Array& params, bool fHelp)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys. So:
     StartShutdown();
-    return "wallet encrypted; puffscoin server stopping, restart to run with encrypted wallet. The keypool has been flushed, you need to make a new backup.";
+    return "wallet encrypted; PUFFScoin server stopping, restart to run with encrypted wallet. The keypool has been flushed, you need to make a new backup.";
 }
 
 Value lockunspent(const Array& params, bool fHelp)
@@ -1770,7 +1770,7 @@ Value lockunspent(const Array& params, bool fHelp)
             "lockunspent unlock [{\"txid\":\"txid\",\"vout\":n},...]\n"
             "\nUpdates list of temporarily unspendable outputs.\n"
             "Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.\n"
-            "A locked transaction output will not be chosen by automatic coin selection, when spending AMSs.\n"
+            "A locked transaction output will not be chosen by automatic coin selection, when spending PUFFS.\n"
             "Locks are stored in memory only. Nodes start with zero locked outputs, and the locked output list\n"
             "is always cleared (by virtue of process exit) when a node stops or fails.\n"
             "Also see the listunspent call\n"
@@ -1882,7 +1882,7 @@ Value settxfee(const Array& params, bool fHelp)
             "settxfee amount\n"
             "\nSet the transaction fee per kB.\n"
             "\nArguments:\n"
-            "1. amount         (numeric, required) The transaction fee in AMS/kB rounded to the nearest 0.00000001\n"
+            "1. amount         (numeric, required) The transaction fee in PUFFS/kB rounded to the nearest 0.00000001\n"
             "\nResult\n"
             "true|false        (boolean) Returns true if successful\n"
             "\nExamples:\n" +
@@ -1906,7 +1906,7 @@ Value getwalletinfo(const Array& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"walletversion\": xxxxx,     (numeric) the wallet version\n"
-            "  \"balance\": xxxxxxx,         (numeric) the total AMS balance of the wallet\n"
+            "  \"balance\": xxxxxxx,         (numeric) the total PUFFS balance of the wallet\n"
             "  \"txcount\": xxxxxxx,         (numeric) the total number of transactions in the wallet\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
@@ -2009,7 +2009,7 @@ Value autocombinerewards(const Array& params, bool fHelp)
     if (fHelp || params.size() < 1)
         throw runtime_error(
             "autocombinerewards <true/false> threshold\n"
-            "Wallet will automatically monitor for any coins with value below the threshold amount, and combine them if they reside with the same PuffsCoin address\n"
+            "Wallet will automatically monitor for any coins with value below the threshold amount, and combine them if they reside with the same PUFFScoin address\n"
             "When autocombinerewards runs it will create a transaction, and therefore will be subject to transaction fees.\n");
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
@@ -2216,7 +2216,7 @@ Value multisend(const Array& params, bool fHelp)
             "The MultiSend transaction is sent when the staked coins mature (100 confirmations)\n"
             "****************************************************************\n"
             "TO CREATE OR ADD TO THE MULTISEND VECTOR:\n"
-            "multisend <PuffsCoin Address> <percent>\n"
+            "multisend <PUFFScoin Address> <percent>\n"
             "This will add a new address to the MultiSend vector\n"
             "Percent is a whole number 1 to 100.\n"
             "****************************************************************\n"
@@ -2235,7 +2235,7 @@ Value multisend(const Array& params, bool fHelp)
     string strAddress = params[0].get_str();
     CBitcoinAddress address(strAddress);
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid AMS address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PUFFS address");
     if (boost::lexical_cast<int>(params[1].get_str()) < 0)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, expected valid percentage");
     if (pwalletMain->IsLocked())
