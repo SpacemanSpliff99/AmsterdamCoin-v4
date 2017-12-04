@@ -220,10 +220,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop PuffsCoin server.");
+            "\nStop PUFFScoin server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "PuffsCoin server stopping";
+    return "PUFFScoin server stopping";
 }
 
 
@@ -1041,7 +1041,7 @@ std::string HelpExampleRpc(string methodname, string args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
            "\"method\": \"" +
-           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:51020/\n";
+           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:50710/\n";
 }
 
 const CRPCTable tableRPC;
