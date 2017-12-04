@@ -44,8 +44,8 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
 	(0, uint256("0x0000016c5074e3a3d7df0c9b9cdc38ef6a72be36c4a3a0233a564533120957f5"))
-	(2, uint256("0x00000bfa9f5517a83532d103038e78941ed28eda11b8fa920cc6c1659e569f75"))
-	(67260, uint256("0x0000000009e85f5c57095d56743bc79f347d36ebf1e142b17ba47f4f2c587b6e"));
+	//(2, uint256("0x00000bfa9f5517a83532d103038e78941ed28eda11b8fa920cc6c1659e569f75"))
+	//(67260, uint256("0x0000000009e85f5c57095d56743bc79f347d36ebf1e142b17ba47f4f2c587b6e"));
     //(1, uint256(""));
     //(616764, uint256("29dd0bd1c59484f290896687b4ffb6a49afa5c498caf61967c69a541f8191557")) //first block to use modifierV2
     //(623933, uint256("c7aafa648a0f1450157dc93bd4d7448913a85b7448f803b4ab970d91fc2a7da7"));
@@ -87,17 +87,17 @@ public:
         pchMessageStart[2] = 0x00;
         pchMessageStart[3] = 0xaa;
         vAlertPubKey = ParseHex("04d6d976efad463fa258e3699e9c3fea60d5168a065abb5829a77448d25e0acbee58bb8f5be56491624b9a48611a8c456a592d45f48ea9c9f0bdc30904534be285");
-        nDefaultPort = 50020;
-        bnProofOfWorkLimit = ~uint256(0) >> 20; // AmsterdamCoin starting difficulty is 1 / 2^12
+        nDefaultPort = 50710;
+        bnProofOfWorkLimit = ~uint256(0) >> 20; // PUFFScoin starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // AmsterdamCoin: 1 minute
-        nTargetSpacing = 1 * 60;  // AmsterdamCoin: 1 minute
-        nLastPOWBlock = 259200;
+        nTargetTimespan = 1 * 60; // PUFFScoin: 1 minute
+        nTargetSpacing = 1 * 60;  // PUFFScoin: 1 minute
+        nLastPOWBlock = 10180; // 1 week of POW
         nMaturity = 101;
         nModifierUpdateBlock = 1;
-        const char* pszTimestamp = "AmsterdamCoin 22-07-2017";
+        const char* pszTimestamp = "PUFFScoin 15-12-2017";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -122,9 +122,9 @@ public:
 		vSeeds.push_back(CDNSSeedData("eu-2.amsterdamcoin.com", "eu-2.amsterdamcoin.com"));
 		vSeeds.push_back(CDNSSeedData("asia-1.amsterdamcoin.com", "asia-1.amsterdamcoin.com"));
 		
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 56); // PUFFScoin mainnet addresses start with P
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 80); // PUFFScoin script addresses start with Z
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 90); // PUFFScoin private keys start with d
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
         //  BIP44 coin type is 'TBD'
@@ -166,10 +166,10 @@ public:
         pchMessageStart[2] = 0x65;
         pchMessageStart[3] = 0xba;
         vAlertPubKey = ParseHex("000010e83b2703ccf322f7dbd62dd5855ac7c10bd055814ce121ba32607d573b8810c02c0582aed05b4deb9c4b77b26d92428c61256cd42774babea0a073b2ed0c9");
-        nDefaultPort = 51474;
+        nDefaultPort = 50712;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // AmsterdamCoin: 1 day
-        nTargetSpacing = 1 * 60;  // AmsterdamCoin: 1 minute
+        nTargetTimespan = 1 * 60; // PUFFScoin: 1 day
+        nTargetSpacing = 1 * 60;  // PUFFScoin: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
@@ -183,14 +183,14 @@ public:
         vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "amsterdamcoin-testnet.seed2.fuzzbawls.pw"));
         vSeeds.push_back(CDNSSeedData("s3v3nh4cks.ddns.net", "s3v3nh4cks.ddns.net"));
         vSeeds.push_back(CDNSSeedData("88.198.192.110", "88.198.192.110"));
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet amsterdamcoin addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet amsterdamcoin script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet PUFFScoin addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet PUFFScoin script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet amsterdamcoin BIP32 pubkeys start with 'DRKV'
+        // Testnet PUFFScoin BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
-        // Testnet amsterdamcoin BIP32 prvkeys start with 'DRKP'
+        // Testnet PUFFScoin BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x3a)(0x80)(0x58)(0x37).convert_to_container<std::vector<unsigned char> >();
-        // Testnet amsterdamcoin BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet PUFFScoin BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x01)(0x00)(0x00)(0x80).convert_to_container<std::vector<unsigned char> >();
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
         fRequireRPCPassword = true;
@@ -228,8 +228,8 @@ public:
         pchMessageStart[3] = 0xac;
         nSubsidyHalvingInterval = 150;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // AmsterdamCoin: 1 day
-        nTargetSpacing = 1 * 60;        // AmsterdamCoin: 1 minutes
+        nTargetTimespan = 24 * 60 * 60; // PUFFScoin: 1 day
+        nTargetSpacing = 1 * 60;        // PUFFScoin: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1454124731;
         genesis.nBits = 0x207fffff;
@@ -263,7 +263,7 @@ public:
     {
         networkID = CBaseChainParams::UNITTEST;
         strNetworkID = "unittest";
-        nDefaultPort = 51478;
+        nDefaultPort = 50712;
         vFixedSeeds.clear(); //! Unit test mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Unit test mode doesn't have any DNS seeds.
         fRequireRPCPassword = false;
