@@ -108,6 +108,18 @@ public:
         genesis.nTime = 1512440648;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 1402465;
+	hashGenesisBlock = uint256("0x01")
+        if (true && genesis.GetHash() != hashGenesisBlock)
+        {
+            Logprintf("recalculating params for mainnet.\n");
+            Logprintf("old mainnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
+            Logprintf("old mainnet genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
+            // deliberately empty for loop finds nonce value.
+            for(genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++){ } 
+            Logprintf("new mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            Logprintf("new mainnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
+            Logprintf("new mainnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+        }
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x0000016c5074e3a3d7df0c9b9cdc38ef6a72be36c4a3a0233a564533120957f5"));
         assert(genesis.hashMerkleRoot == uint256("0xcdf9a0f882351aa571e3f647ef82858c08b5eb4f1847df68787f15cc42c36529"));
@@ -168,6 +180,18 @@ public:
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1512440648;
         genesis.nNonce = 2402015;
+	hashGenesisBlock = uint256("0x01")
+        if (true && genesis.GetHash() != hashGenesisBlock)
+        {
+            Logprintf("recalculating params for mainnet.\n");
+            Logprintf("old testnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
+            Logprintf("old testnet genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
+            // deliberately empty for loop finds nonce value.
+            for(genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++){ } 
+            Logprintf("new testnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            Logprintf("new testnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
+            Logprintf("new testnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+        }
         hashGenesisBlock = genesis.GetHash();
         //assert(hashGenesisBlock == uint256("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
         vFixedSeeds.clear();
@@ -220,9 +244,21 @@ public:
         nTargetTimespan = 24 * 60 * 60; // PUFFScoin: 1 day
         nTargetSpacing = 1 * 60;        // PUFFScoin: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1454124731;
+        genesis.nTime = 1512440648;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 12345;
+	hashGenesisBlock = uint256("0x01")
+        if (true && genesis.GetHash() != hashGenesisBlock)
+        {
+            Logprintf("recalculating params for mainnet.\n");
+            Logprintf("old regtest genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
+            Logprintf("old regtest genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
+            // deliberately empty for loop finds nonce value.
+            for(genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++){ } 
+            Logprintf("new regtest genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            Logprintf("new regtest genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
+            Logprintf("new regtest genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+        }
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 51476;
         //assert(hashGenesisBlock == uint256("0x4f023a2120d9127b21bbad01724fdb79b519f593f2a85b60d3d79160ec5f29df"));
