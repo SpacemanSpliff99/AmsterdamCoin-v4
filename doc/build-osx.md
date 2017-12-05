@@ -32,7 +32,7 @@ Instructions: Homebrew
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/SpacemanSpliff99/PUFFSco..git
+        git clone https://github.com/SpacemanSpliff99/puffscoin.git
         cd PUFFScoin
 
 2.  Build puffscoind:
