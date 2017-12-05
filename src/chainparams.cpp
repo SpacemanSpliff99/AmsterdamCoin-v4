@@ -82,10 +82,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x00;
-        pchMessageStart[1] = 0x22;
-        pchMessageStart[2] = 0x00;
-        pchMessageStart[3] = 0xaa;
+        pchMessageStart[0] = 0x75;
+        pchMessageStart[1] = 0x18;
+        pchMessageStart[2] = 0x78;
+        pchMessageStart[3] = 0xd6;
         vAlertPubKey = ParseHex("04d6d976efad463fa258e3699e9c3fea60d5168a065abb5829a77448d25e0acbee58bb8f5be56491624b9a48611a8c456a592d45f48ea9c9f0bdc30904534be285");
         nDefaultPort = 50710;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // PUFFScoin starting difficulty is 1 / 2^12
