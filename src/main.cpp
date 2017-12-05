@@ -2582,7 +2582,7 @@ bool static FlushStateToDisk(CValidationState& state, FlushStateMode mode)
             nLastWrite = GetTimeMicros();
         }
     } catch (const std::runtime_error& e) {
-        return state.Abort(std::string("System error while flushing: ") + e.what());
+        return state.Abort(std::string("System error while flushing, stop dumping those shitcoins down the toilet, d00d: ") + e.what());
     }
     return true;
 }
@@ -4064,7 +4064,7 @@ bool CVerifyDB::VerifyDB(CCoinsView* coinsview, int nCheckLevel, int nCheckDepth
 
     // Verify blocks in the best chain
     if (nCheckDepth <= 0)
-        nCheckDepth = 1000000000; // suffices until the year 19000
+        nCheckDepth = 1000000000; // suffices for ~1900 years (3917 AD.... to our great great great great great (etc) grandkids. you can fix this mess mess yourselves.
     if (nCheckDepth > chainActive.Height())
         nCheckDepth = chainActive.Height();
     nCheckLevel = std::max(0, std::min(4, nCheckLevel));
