@@ -43,31 +43,28 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x0000016c5074e3a3d7df0c9b9cdc38ef6a72be36c4a3a0233a564533120957f5"))
-	//(2, uint256("0x00000bfa9f5517a83532d103038e78941ed28eda11b8fa920cc6c1659e569f75"))
-	//(67260, uint256("0x0000000009e85f5c57095d56743bc79f347d36ebf1e142b17ba47f4f2c587b6e"));
-    //(1, uint256(""));
-    //(616764, uint256("29dd0bd1c59484f290896687b4ffb6a49afa5c498caf61967c69a541f8191557")) //first block to use modifierV2
-    //(623933, uint256("c7aafa648a0f1450157dc93bd4d7448913a85b7448f803b4ab970d91fc2a7da7"));
+    ( 0, uint256("0x001"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1506431510, // * UNIX timestamp of last checkpoint block
-    100000,    // * total number of transactions between genesis and last checkpoint
+    1512440648, // * UNIX timestamp of last checkpoint block
+    0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x001"));
+    boost::assign::map_list_of
+    (0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1454124731,
+    1512440648,
     0,
     250};
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-    boost::assign::map_list_of(0, uint256("0x001"));
+    boost::assign::map_list_of
+    (0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1454124731,
+    1512440648,
     0,
     100};
 class CMainParams : public CChainParams
@@ -86,7 +83,7 @@ public:
         pchMessageStart[1] = 0x18;
         pchMessageStart[2] = 0x78;
         pchMessageStart[3] = 0xd6;
-        vAlertPubKey = ParseHex("04d6d976efad463fa258e3699e9c3fea60d5168a065abb5829a77448d25e0acbee58bb8f5be56491624b9a48611a8c456a592d45f48ea9c9f0bdc30904534be285");
+        vAlertPubKey = ParseHex("0419fbebecb2e054c620ef132b2f907014037eb013a6e4972be4289a720b0978fb81f84d5b749d7d0aa1435794ca0bb58e7dae5d515d56c41b123e9");
         nDefaultPort = 50710;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // PUFFScoin starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
@@ -97,30 +94,26 @@ public:
         nLastPOWBlock = 10180; // 1 week of POW
         nMaturity = 101;
         nModifierUpdateBlock = 1;
-        const char* pszTimestamp = "PUFFScoin 15-12-2017";
+        const char* pszTimestamp = "CBC News 12-17-2017 Police charge 3 after raiding cannabis dispensaries in Sydney, N.S.";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 0 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0421fb0665876637d9d79d03a24f383393838fb9e3340858a6d5a70b079f4af57cfff3ca00310be5300d532adf6261ba98ac70d24d943a6be333bec6d7a6d93013") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("049ac3bad59db9b5430b911e9a5a4b2f3a76511d414e085eb65bed6dcb7229d36f5f54d48c8fd60b7a2391f0969c6bf64e245260c90a1c630d4f8912") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1500685200;
+        genesis.nTime = 1512440648;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 1402465;
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x0000016c5074e3a3d7df0c9b9cdc38ef6a72be36c4a3a0233a564533120957f5"));
         assert(genesis.hashMerkleRoot == uint256("0xcdf9a0f882351aa571e3f647ef82858c08b5eb4f1847df68787f15cc42c36529"));
 		
-        vSeeds.push_back(CDNSSeedData("nl-1.amsterdamcoin.com", "nl-1.amsterdamcoin.com"));
-        vSeeds.push_back(CDNSSeedData("us-1.amsterdamcoin.com", "us-1.amsterdamcoin.com"));
-		vSeeds.push_back(CDNSSeedData("us-2.amsterdamcoin.com", "us-2.amsterdamcoin.com"));
-		vSeeds.push_back(CDNSSeedData("eu-1.amsterdamcoin.com", "eu-1.amsterdamcoin.com"));
-		vSeeds.push_back(CDNSSeedData("eu-2.amsterdamcoin.com", "eu-2.amsterdamcoin.com"));
-		vSeeds.push_back(CDNSSeedData("asia-1.amsterdamcoin.com", "asia-1.amsterdamcoin.com"));
+        vFixedSeeds.clear();
+        vSeeds.clear();
 		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 56); // PUFFScoin mainnet addresses start with P
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 80); // PUFFScoin script addresses start with Z
@@ -165,7 +158,7 @@ public:
         pchMessageStart[1] = 0x76;
         pchMessageStart[2] = 0x65;
         pchMessageStart[3] = 0xba;
-        vAlertPubKey = ParseHex("000010e83b2703ccf322f7dbd62dd5855ac7c10bd055814ce121ba32607d573b8810c02c0582aed05b4deb9c4b77b26d92428c61256cd42774babea0a073b2ed0c9");
+        vAlertPubKey = ParseHex("047c0bdb48eb26bb9ecfe093332d2c236583b2f62f465273175fb2c7f2aa49ad3e9a2357574a74fd6cf25e9774bba8951daab94c426af8c66df8c70f");
         nDefaultPort = 50712;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // PUFFScoin: 1 day
@@ -173,16 +166,12 @@ public:
         nLastPOWBlock = 200;
         nMaturity = 15;
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1454124731;
+        genesis.nTime = 1512440648;
         genesis.nNonce = 2402015;
         hashGenesisBlock = genesis.GetHash();
         //assert(hashGenesisBlock == uint256("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "amsterdamcoin-testnet.seed.fuzzbawls.pw"));
-        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "amsterdamcoin-testnet.seed2.fuzzbawls.pw"));
-        vSeeds.push_back(CDNSSeedData("s3v3nh4cks.ddns.net", "s3v3nh4cks.ddns.net"));
-        vSeeds.push_back(CDNSSeedData("88.198.192.110", "88.198.192.110"));
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet PUFFScoin addresses start with 'x' or 'y'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet PUFFScoin script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
