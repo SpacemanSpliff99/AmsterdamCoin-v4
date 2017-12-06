@@ -107,7 +107,7 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1512440648;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1402465;
+        genesis.nNonce = 0;
 	hashGenesisBlock = uint256("0x01")
         if (true && genesis.GetHash() != hashGenesisBlock)
         {
@@ -179,7 +179,7 @@ public:
         nMaturity = 15;
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1512440648;
-        genesis.nNonce = 2402015;
+        genesis.nNonce = 0;
 	hashGenesisBlock = uint256("0x01")
         if (true && genesis.GetHash() != hashGenesisBlock)
         {
@@ -193,7 +193,7 @@ public:
             Logprintf("new testnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
         }
         hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
+        //assert(hashGenesisBlock == uint256("0x"));
         vFixedSeeds.clear();
         vSeeds.clear();
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet PUFFScoin addresses start with 'x' or 'y'
