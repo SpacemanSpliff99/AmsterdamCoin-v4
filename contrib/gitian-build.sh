@@ -14,10 +14,10 @@ windows=true
 osx=true
 
 # Other Basic variables
-SIGNER=
-VERSION=
+SIGNER=Mitchel
+VERSION=5.0.0
 commit=false
-url=https://github.com/SpacemanSpliff99/PUFFSco.
+url=https://github.com/SpacemanSpliff99/puffscoin
 proc=2
 mem=2000
 lxc=true
