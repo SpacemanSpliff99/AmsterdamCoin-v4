@@ -94,7 +94,7 @@ public:
         nLastPOWBlock = 10180; // 1 week of POW
         nMaturity = 101;
         nModifierUpdateBlock = 1;
-        const char* pszTimestamp = "CBC News 12-17-2017 Police charge 3 after raiding cannabis dispensaries in Sydney, N.S.";
+        const char* pszTimestamp = "CBC 18-01-04 Canadian cannabis producers set their sights on global domination";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -105,7 +105,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1512440648;
+        genesis.nTime = 1515096037;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 0;
 	hashGenesisBlock = uint256("0x01")
@@ -178,7 +178,7 @@ public:
         nLastPOWBlock = 200;
         nMaturity = 15;
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1512440648;
+        genesis.nTime = 1515096037;
         genesis.nNonce = 0;
 	hashGenesisBlock = uint256("0x01")
         if (true && genesis.GetHash() != hashGenesisBlock)
